@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Défis Informatique - Centre de Formation</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">Défis <span>Informatique</span></a>
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#apropos">À propos</a></li>
+                <li><a href="#formations">Formations</a></li>
+                <li><a href="#formateurs">Formateurs</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#inscription" class="btn btn-secondary">S'inscrire</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero section -->
+    <section class="hero" id="accueil">
+        <div class="container">
+            <h1>Formez-vous aux métiers de l'informatique</h1>
+            <p>Défis Informatique vous accompagne dans votre reconversion ou votre montée en compétences avec des formations pratiques et diplômantes, dispensées par des experts du secteur.</p>
+            <a href="#formations" class="btn">Découvrir nos formations</a>
+        </div>
+    </section>
+
+    <!-- About section -->
+    <section id="apropos">
+        <div class="container">
+            <h2 class="section-title">À propos de notre centre</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Notre mission : former les talents de demain</h3>
+                    <p>Fondé en 2010, Défis Informatique est un centre de formation spécialisé dans les métiers du numérique. Nous proposons des formations adaptées aux besoins du marché, allant des systèmes d'exploitation à la programmation avancée.</p>
+                    <p>Notre pédagogie est basée sur la pratique avec plus de 70% du temps de formation consacré à des projets concrets et des cas réels d'entreprise.</p>
+                    <p>Nous accompagnons également nos apprenants dans leur recherche d'emploi avec un service dédié et un réseau de plus de 200 entreprises partenaires.</p>
+                    <a href="#contact" class="btn">Nous contacter</a>
+                </div>
+                <div class="about-stats">
+                    <div class="features">
+                        <div class="feature">
+                            <i class="fas fa-user-graduate"></i>
+                            <h4>+2000 diplômés</h4>
+                            <p>Formés depuis notre création</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-briefcase"></i>
+                            <h4>92% d'insertion</h4>
+                            <p>Dans les 6 mois après la formation</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                            <h4>Formateurs experts</h4>
+                            <p>Professionnels en activité</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formations section -->
+    <section class="formations" id="formations">
+        <div class="container">
+            <h2 class="section-title">Nos formations</h2>
+            <div class="formation-cards">
+                <!-- Formation 1 -->
+                <div class="formation-card">
+                    <div class="formation-img" style="background-image: url('https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');"></div>
+                    <div class="formation-content">
+                        <h3>Systèmes d'exploitation</h3>
+                        <p>Maîtrisez les principaux systèmes d'exploitation du marché. Formation complète sur Windows (7, 8, 10, 11) et Linux (Debian, Ubuntu, Kali).</p>
+                        <div class="formation-tags">
+                            <span class="tag">Windows 7/8/10/11</span>
+                            <span class="tag">Debian</span>
+                            <span class="tag">Ubuntu</span>
+                            <span class="tag">Kali Linux</span>
+                            <span class="tag">Administration</span>
+                        </div>
+                        <p><strong>Durée :</strong> 3 mois (400 heures)</p>
+                        <a href="#contact" class="btn">Plus d'infos</a>
+                    </div>
+                </div>
+
+                <!-- Formation 2 -->
+                <div class="formation-card">
+                    <div class="formation-img" style="background-image: url('https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');"></div>
+                    <div class="formation-content">
+                        <h3>Bureautique</h3>
+                        <p>Devenez expert en outils bureautiques. Formation complète sur Microsoft Office et Libre Office pour une productivité maximale.</p>
+                        <div class="formation-tags">
+                            <span class="tag">Microsoft Office</span>
+                            <span class="tag">Libre Office</span>
+                            <span class="tag">Word</span>
+                            <span class="tag">Excel</span>
+                            <span class="tag">PowerPoint</span>
+                        </div>
+                        <p><strong>Durée :</strong> 2 mois (200 heures)</p>
+                        <a href="#contact" class="btn">Plus d'infos</a>
+                    </div>
+                </div>
+
+                <!-- Formation 3 -->
+                <div class="formation-card">
+                    <div class="formation-img" style="background-image: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');"></div>
+                    <div class="formation-content">
+                        <h3>Programmation</h3>
+                        <p>Formation complète en développement logiciel. Apprenez les langages les plus demandés du marché avec nos experts.</p>
+                        <div class="formation-tags">
+                            <span class="tag">HTML/CSS</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">Java</span>
+                            <span class="tag">C/C++/C#</span>
+                        </div>
+                        <p><strong>Durée :</strong> 6 mois (800 heures)</p>
+                        <a href="#contact" class="btn">Plus d'infos</a>
+                    </div>
+                </div>
+
+                <!-- Formation 4 -->
+                <div class="formation-card">
+                    <div class="formation-img" style="background-image: url('https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');"></div>
+                    <div class="formation-content">
+                        <h3>Intelligence Artificielle</h3>
+                        <p>Plongez dans le futur avec notre formation en IA. Découvrez le machine learning, le deep learning et leurs applications concrètes.</p>
+                        <div class="formation-tags">
+                            <span class="tag">Machine Learning</span>
+                            <span class="tag">Deep Learning</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">TensorFlow</span>
+                            <span class="tag">Data Science</span>
+                        </div>
+                        <p><strong>Durée :</strong> 8 mois (1000 heures)</p>
+                        <a href="#contact" class="btn">Plus d'infos</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formateurs section -->
+    <section id="formateurs">
+        <div class="container">
+            <h2 class="section-title">Nos formateurs experts</h2>
+            <div class="formateur-cards">
+                <div class="formateur-card">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Thomas Martin" class="formateur-img">
+                    <h3>Larwanou</h3>
+                    <p>Expert en systèmes d'exploitation avec 12 ans d'expérience en administration système.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+
+                <div class="formateur-card">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah Dubois" class="formateur-img">
+                    <h3>Halimatou</h3>
+                    <p>Spécialiste en bureautique et productivité, formatrice certifiée Microsoft.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+
+                <div class="formateur-card">
+                    <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Pierre Bernard" class="formateur-img">
+                    <h3>Ousmane</h3>
+                    <p>Développeur fullstack avec expertise en Python, Java et C++, 15 ans d'expérience.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+
+                <div class="formateur-card">
+                    <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Julie Petit" class="formateur-img">
+                    <h3>Hawaou</h3>
+                    <p>Data scientist, spécialisée en intelligence artificielle et machine learning.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Contactez-nous</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Prenez rendez-vous pour une visite</h3>
+                    <p>Notre équipe est à votre disposition pour répondre à toutes vos questions et vous orienter vers la formation la plus adaptée à votre projet.</p>
+
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Adresse</h4>
+                            <p>Rue des Technologies, Quartier ADS<br>Maradi, Niger</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Téléphone</h4>
+                            <p>+227 96 56 50 81<br>+227 97 23 69 74<br>+227 87 54 47 68</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>informatiquedefis@gmail.com</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Horaires d'ouverture</h4>
+                            <p>Lundi - Vendredi : 8h00 - 18h00<br>Samedi - Dimanche : 9h00 - 17h00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h3>Envoyez-nous un message</h3>
+                    <form id="contactForm">
+                        <input type="text" placeholder="Votre nom" required>
+                        <input type="email" placeholder="Votre email" required>
+                        <input type="tel" placeholder="Votre téléphone">
+                        <select required class="form-select">
+                            <option value="" disabled selected>Sélectionnez une formation</option>
+                            <option value="systeme">Systèmes d'exploitation</option>
+                            <option value="bureautique">Bureautique</option>
+                            <option value="programmation">Programmation</option>
+                            <option value="ia">Intelligence Artificielle</option>
+                            <option value="autre">Autre</option>
+                        </select>
+                        <textarea placeholder="Votre message" rows="6" required></textarea>
+                        <button type="submit" class="btn">Envoyer le message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <a href="#" class="footer-logo">Défis <span>Informatique</span></a>
+                    <p>Centre de formation aux métiers de l'informatique depuis 2010. Nous formons les talents de demain avec des méthodes pédagogiques innovantes.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Formations</h4>
+                    <ul>
+                        <li><a href="#formations">Systèmes d'exploitation</a></li>
+                        <li><a href="#formations">Bureautique</a></li>
+                        <li><a href="#formations">Programmation</a></li>
+                        <li><a href="#formations">Intelligence Artificielle</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Liens rapides</h4>
+                    <ul>
+                        <li><a href="#accueil">Accueil</a></li>
+                        <li><a href="#apropos">À propos</a></li>
+                        <li><a href="#formations">Formations</a></li>
+                        <li><a href="#formateurs">Formateurs</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Informations</h4>
+                    <ul>
+                        <li><a href="#">Financement</a></li>
+                        <li><a href="#">Programmes détaillés</a></li>
+                        <li><a href="#">Témoignages</a></li>
+                        <li><a href="#">Mentions légales</a></li>
+                        <li><a href="#">Politique de confidentialité</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2023 Défis Informatique. Tous droits réservés. | Maradi, Niger</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
