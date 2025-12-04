@@ -3,67 +3,264 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Défis Informatique - Centre de Formation</title>
+    <title>Défis Informatique - Centre d'Excellence Technologique | Maradi</title>
+    <meta name="description" content="Centre de formation et services informatiques certifiés à Maradi. Formations professionnelles en systèmes d'exploitation, programmation, IA, trading et bureautique.">
+    <meta name="keywords" content="formation informatique, services informatiques, Maradi, Niger, programmation, trading, intelligence artificielle">
+    <meta name="author" content="Défis Informatique">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container header-container">
-            <a href="#" class="logo">Défis <span>Informatique</span></a>
-            <button class="mobile-menu-btn" id="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
-            </button>
-            <ul class="nav-links" id="nav-links">
-                <li><a href="#accueil">Accueil</a></li>
-                <li><a href="#apropos">À propos</a></li>
-                <li><a href="#formations">Formations</a></li>
-                <li><a href="#formateurs">Formateurs</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#inscription" class="btn btn-secondary">S'inscrire</a></li>
-            </ul>
+    <!-- Navigation Principale -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo-container">
+                <div class="logo-icon">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>Défis Informatique</h1>
+                    <p class="logo-subtitle">Centre d'Excellence Technologique</p>
+                </div>
+            </div>
+
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="#accueil" class="nav-link active"><i class="fas fa-home"></i> Accueil</a></li>
+                    <li><a href="#apropos" class="nav-link"><i class="fas fa-info-circle"></i> À propos</a></li>
+                    <li><a href="#formations" class="nav-link"><i class="fas fa-graduation-cap"></i> Formations</a></li>
+                    <li><a href="#services" class="nav-link"><i class="fas fa-concierge-bell"></i> Services</a></li>
+                    <li><a href="#boutique" class="nav-link"><i class="fas fa-shopping-bag"></i> Boutique</a></li>
+                    <li><a href="#equipe" class="nav-link"><i class="fas fa-users"></i> Équipe</a></li>
+                    <li><a href="#contact" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <a href="#contact" class="cta-button">
+                    <span>S'inscrire</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <button class="menu-toggle" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </div>
     </header>
 
-    <!-- Hero section -->
-    <section class="hero" id="accueil">
-        <div class="container">
-            <h1>Formez-vous aux métiers de l'informatique</h1>
-            <p>Défis Informatique vous accompagne dans votre reconversion ou votre montée en compétences avec des formations pratiques et diplômantes, dispensées par des experts du secteur.</p>
-            <a href="#formations" class="btn">Découvrir nos formations</a>
+    <!-- Section Hero améliorée -->
+    <section class="hero-section" id="accueil">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span>Excellence & Innovation</span>
+                </div>
+                
+                <h2 class="hero-title">
+                    <span class="title-line">Formation Technologique</span>
+                    <span class="title-line highlight">
+                        <span class="typing-text">d'Excellence</span>
+                        <span class="cursor"></span>
+                    </span>
+                    <span class="title-line">à Maradi</span>
+                </h2>
+                
+                <p class="hero-subtitle">
+                    Transformez votre avenir professionnel avec des compétences certifiées et recherchées sur le marché international
+                </p>
+                
+                <p class="hero-description">
+                    <strong>Défis Informatique</strong> est le centre leader de formation et services informatiques au Niger depuis 2010. 
+                    Nous proposons des programmes pédagogiques innovants, adaptés aux besoins actuels du marché et dispensés par des 
+                    experts certifiés. Notre mission : votre réussite professionnelle.
+                </p>
+                
+                <div class="hero-highlights">
+                    <div class="highlight-item">
+                        <i class="fas fa-certificate"></i>
+                        <span>Certifications internationales</span>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-briefcase"></i>
+                        <span>Insertion professionnelle garantie</span>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Suivi personnalisé</span>
+                    </div>
+                </div>
+                
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="15">0</div>
+                        <div class="stat-label">Années d'expertise</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="2000">0</div>
+                        <div class="stat-label">Professionnels formés</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="98">0</div>
+                        <div class="stat-label">Taux de réussite</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="120">0</div>
+                        <div class="stat-label">Partenaires entreprises</div>
+                    </div>
+                </div>
+                
+                <div class="hero-actions">
+                    <a href="#formations" class="btn-primary">
+                        <i class="fas fa-play-circle"></i>
+                        Découvrir nos formations
+                    </a>
+                    <a href="#contact" class="btn-secondary">
+                        <i class="fas fa-calendar-alt"></i>
+                        Réserver une visite guidée
+                    </a>
+                </div>
+            </div>
+            
+            <div class="hero-visual">
+                <div class="visual-container">
+                    <!-- Sphère technologique avec logos en gravitation -->
+                    <div class="tech-sphere">
+                        <div class="sphere-core">
+                            <div class="core-glow"></div>
+                        </div>
+                        <div class="orbit-ring ring-1"></div>
+                        <div class="orbit-ring ring-2"></div>
+                        <div class="orbit-ring ring-3"></div>
+                        
+                        <!-- Logos représentant nos domaines d'expertise -->
+                        <div class="orbiting-logo" style="--orbit-index: 1;">
+                            <div class="logo-orb">
+                                <i class="fab fa-windows"></i>
+                            </div>
+                        </div>
+                        <div class="orbiting-logo" style="--orbit-index: 1.5;">
+                            <div class="logo-orb">
+                                <i class="fas fa-file-excel"></i>
+                            </div>
+                        </div>
+                        <div class="orbiting-logo" style="--orbit-index: 2;">
+                            <div class="logo-orb">
+                                <i class="fab fa-python"></i>
+                            </div>
+                        </div>
+                        <div class="orbiting-logo" style="--orbit-index: 2.5;">
+                            <div class="logo-orb">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                        </div>
+                        <div class="orbiting-logo" style="--orbit-index: 3;">
+                            <div class="logo-orb">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                        </div>
+                        <div class="orbiting-logo" style="--orbit-index: 3.5;">
+                            <div class="logo-orb">
+                                <i class="fab fa-ubuntu"></i>
+                            </div>
+                        </div>
+                        <div class="orbiting-logo" style="--orbit-index: 4;">
+                            <div class="logo-orb">
+                                <i class="fas fa-code"></i>
+                            </div>
+                        </div>
+                        <div class="orbiting-logo" style="--orbit-index: 4.5;">
+                            <div class="logo-orb">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="visual-badge">
+                        <i class="fas fa-award"></i>
+                        <span>Centre Certifié</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- About section -->
-    <section id="apropos">
-        <div class="container">
-            <h2 class="section-title">À propos de notre centre</h2>
+    <!-- Section À Propos -->
+    <section class="section about-section" id="apropos">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">À propos de nous</h2>
+                <p class="section-subtitle">Excellence technologique au service du développement</p>
+            </div>
+            
             <div class="about-content">
                 <div class="about-text">
-                    <h3>Notre mission : former les talents de demain</h3>
-                    <p>Fondé en 2010, Défis Informatique est un centre de formation spécialisé dans les métiers du numérique. Nous proposons des formations adaptées aux besoins du marché, allant des systèmes d'exploitation à la programmation avancée.</p>
-                    <p>Notre pédagogie est basée sur la pratique avec plus de 70% du temps de formation consacré à des projets concrets et des cas réels d'entreprise.</p>
-                    <p>Nous accompagnons également nos apprenants dans leur recherche d'emploi avec un service dédié et un réseau de plus de 200 entreprises partenaires.</p>
-                    <a href="#contact" class="btn">Nous contacter</a>
+                    <h3>Notre Mission</h3>
+                    <p>
+                        Fondé en 2010, Défis Informatique s'est imposé comme le leader de la formation 
+                        et des services informatiques à Maradi. Notre mission est de fournir une 
+                        éducation technologique de qualité, adaptée aux besoins du marché international.
+                    </p>
+                    
+                    <div class="mission-grid">
+                        <div class="mission-card">
+                            <i class="fas fa-rocket"></i>
+                            <h4>Innovation</h4>
+                            <p>Programmes constamment mis à jour avec les dernières technologies</p>
+                        </div>
+                        <div class="mission-card">
+                            <i class="fas fa-handshake"></i>
+                            <h4>Excellence</h4>
+                            <p>Formations certifiantes reconnues internationalement</p>
+                        </div>
+                    </div>
+                    
+                    <div class="values-section">
+                        <h4>Nos Valeurs</h4>
+                        <div class="values-list">
+                            <span class="value-tag">Intégrité</span>
+                            <span class="value-tag">Excellence</span>
+                            <span class="value-tag">Innovation</span>
+                            <span class="value-tag">Service Client</span>
+                            <span class="value-tag">Professionalisme</span>
+                            <span class="value-tag">Accessibilité</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="about-stats">
-                    <div class="features">
-                        <div class="feature">
-                            <i class="fas fa-user-graduate"></i>
-                            <h4>+2000 diplômés</h4>
-                            <p>Formés depuis notre création</p>
+                
+                <div class="about-visual">
+                    <div class="experience-card">
+                        <div class="exp-header">
+                            <div class="exp-years">
+                                <span class="number">15</span>
+                                <span class="label">Ans d'expertise</span>
+                            </div>
                         </div>
-                        <div class="feature">
-                            <i class="fas fa-briefcase"></i>
-                            <h4>92% d'insertion</h4>
-                            <p>Dans les 6 mois après la formation</p>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-chalkboard-teacher"></i>
-                            <h4>Formateurs experts</h4>
-                            <p>Professionnels en activité</p>
+                        
+                        <div class="exp-stats">
+                            <div class="exp-stat">
+                                <i class="fas fa-user-graduate"></i>
+                                <div>
+                                    <span class="count">2000+</span>
+                                    <span class="desc">Diplômés</span>
+                                </div>
+                            </div>
+                            <div class="exp-stat">
+                                <i class="fas fa-building"></i>
+                                <div>
+                                    <span class="count">120+</span>
+                                    <span class="desc">Partenaires</span>
+                                </div>
+                            </div>
+                            <div class="exp-stat">
+                                <i class="fas fa-globe"></i>
+                                <div>
+                                    <span class="count">50+</span>
+                                    <span class="desc">Pays desservis</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -71,192 +268,1534 @@
         </div>
     </section>
 
-    <!-- Formations section -->
-    <section class="formations" id="formations">
-        <div class="container">
-            <h2 class="section-title">Nos formations</h2>
-            <div class="formation-cards">
-                <!-- Formation 1 -->
-                <div class="formation-card">
-                    <div class="formation-img" style="background-image: url('https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');"></div>
-                    <div class="formation-content">
-                        <h3>Systèmes d'exploitation</h3>
-                        <p>Maîtrisez les principaux systèmes d'exploitation du marché. Formation complète sur Windows (7, 8, 10, 11) et Linux (Debian, Ubuntu, Kali).</p>
-                        <div class="formation-tags">
-                            <span class="tag">Windows 7/8/10/11</span>
-                            <span class="tag">Debian</span>
-                            <span class="tag">Ubuntu</span>
-                            <span class="tag">Kali Linux</span>
-                            <span class="tag">Administration</span>
+    <!-- Section Formations avec onglets comme la boutique -->
+    <section class="section formations-section" id="formations">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">Nos Formations Certifiées</h2>
+                <p class="section-subtitle">Programmes professionnels adaptés au marché international</p>
+            </div>
+            
+            <!-- Onglets de catégories comme la boutique -->
+            <div class="categories-tabs">
+                <button class="category-tab active" data-category="toutes">Toutes les formations</button>
+                <button class="category-tab" data-category="systeme">Systèmes & Réseaux</button>
+                <button class="category-tab" data-category="bureautique">Suite Bureautique</button>
+                <button class="category-tab" data-category="programmation">Programmation</button>
+                <button class="category-tab" data-category="ia">Intelligence Artificielle</button>
+                <button class="category-tab" data-category="trading">Trading</button>
+                <button class="category-tab" data-category="design">Design Graphique</button>
+            </div>
+            
+            <!-- Conteneur de défilement horizontal -->
+            <div class="horizontal-scroll-container">
+                <div class="scroll-wrapper">
+                    <!-- Toutes les formations -->
+                    <div class="cards-grid formations-grid active" id="toutes">
+                        <!-- Formation 1: Systèmes d'exploitation -->
+                        <div class="formation-card" data-category="systeme">
+                            <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1614624532983-4ce03382d63d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')">
+                                <div class="card-badge">Certifié Microsoft</div>
+                            </div>
+                            <div class="card-content">
+                                <h3>Administration Systèmes</h3>
+                                <div class="card-meta">
+                                    <span><i class="far fa-clock"></i> 3 mois</span>
+                                    <span><i class="fas fa-level-up-alt"></i> Expert</span>
+                                </div>
+                                <p class="card-desc">
+                                    Maîtrisez Windows Server, Linux et la virtualisation pour devenir 
+                                    administrateur système certifié.
+                                </p>
+                                <div class="tech-tags">
+                                    <span>Windows Server</span>
+                                    <span>Linux</span>
+                                    <span>Virtualisation</span>
+                                    <span>Sécurité</span>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="price-info">
+                                        <span class="price">150,000 FCFA</span>
+                                        <span class="duration">formation complète</span>
+                                    </div>
+                                    <a href="#contact" class="card-btn">
+                                        <i class="fas fa-info-circle"></i>
+                                        Détails
+                                    </a>
+                                </div>
+                            </div>
                         </div>
-                        <p><strong>Durée :</strong> 3 mois (400 heures)</p>
-                        <a href="#contact" class="btn">Plus d'infos</a>
+                        
+                        <!-- Formation 2: Suite Bureautique -->
+                        <div class="formation-card" data-category="bureautique">
+                            <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')">
+                                <div class="card-badge">Office 365</div>
+                            </div>
+                            <div class="card-content">
+                                <h3>Suite Bureautique Professionnelle</h3>
+                                <div class="card-meta">
+                                    <span><i class="far fa-clock"></i> 2 mois</span>
+                                    <span><i class="fas fa-level-up-alt"></i> Tous niveaux</span>
+                                </div>
+                                <p class="card-desc">
+                                    Devenez expert en Microsoft Office et Libre Office. Automatisation, 
+                                    analyses avancées et productivité maximale.
+                                </p>
+                                <div class="tech-tags">
+                                    <span>Excel Expert</span>
+                                    <span>Power BI</span>
+                                    <span>VBA</span>
+                                    <span>Teams</span>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="price-info">
+                                        <span class="price">100,000 FCFA</span>
+                                        <span class="duration">par module</span>
+                                    </div>
+                                    <a href="#contact" class="card-btn">
+                                        <i class="fas fa-info-circle"></i>
+                                        Détails
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Formation 3: Programmation -->
+                        <div class="formation-card" data-category="programmation">
+                            <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')">
+                                <div class="card-badge">Full Stack</div>
+                            </div>
+                            <div class="card-content">
+                                <h3>Développement Full Stack</h3>
+                                <div class="card-meta">
+                                    <span><i class="far fa-clock"></i> 6 mois</span>
+                                    <span><i class="fas fa-level-up-alt"></i> Avancé</span>
+                                </div>
+                                <p class="card-desc">
+                                    Maîtrisez le développement web et mobile avec les technologies 
+                                    les plus demandées du marché.
+                                </p>
+                                <div class="tech-tags">
+                                    <span>JavaScript</span>
+                                    <span>Python</span>
+                                    <span>React</span>
+                                    <span>Node.js</span>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="price-info">
+                                        <span class="price">300,000 FCFA</span>
+                                        <span class="duration">formation complète</span>
+                                    </div>
+                                    <a href="#contact" class="card-btn">
+                                        <i class="fas fa-info-circle"></i>
+                                        Détails
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Formation 4: Intelligence Artificielle -->
+                        <div class="formation-card" data-category="ia">
+                            <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')">
+                                <div class="card-badge">AI/ML</div>
+                            </div>
+                            <div class="card-content">
+                                <h3>Intelligence Artificielle</h3>
+                                <div class="card-meta">
+                                    <span><i class="far fa-clock"></i> 8 mois</span>
+                                    <span><i class="fas fa-level-up-alt"></i> Expert</span>
+                                </div>
+                                <p class="card-desc">
+                                    Deep Learning, Machine Learning et leurs applications dans 
+                                    l'industrie et la recherche.
+                                </p>
+                                <div class="tech-tags">
+                                    <span>Python</span>
+                                    <span>TensorFlow</span>
+                                    <span>Data Science</span>
+                                    <span>Neural Networks</span>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="price-info">
+                                        <span class="price">450,000 FCFA</span>
+                                        <span class="duration">formation expert</span>
+                                    </div>
+                                    <a href="#contact" class="card-btn">
+                                        <i class="fas fa-info-circle"></i>
+                                        Détails
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Formation 5: Trading -->
+                        <div class="formation-card" data-category="trading">
+                            <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')">
+                                <div class="card-badge">Certifié</div>
+                            </div>
+                            <div class="card-content">
+                                <h3>Trading Algorithmique</h3>
+                                <div class="card-meta">
+                                    <span><i class="far fa-clock"></i> 4 mois</span>
+                                    <span><i class="fas fa-level-up-alt"></i> Intermédiaire</span>
+                                </div>
+                                <p class="card-desc">
+                                    Stratégies de trading sur Forex, crypto-monnaies et marchés 
+                                    financiers avec analyse technique avancée.
+                                </p>
+                                <div class="tech-tags">
+                                    <span>Forex</span>
+                                    <span>Crypto</span>
+                                    <span>Python Trading</span>
+                                    <span>Risk Management</span>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="price-info">
+                                        <span class="price">250,000 FCFA</span>
+                                        <span class="duration">formation complète</span>
+                                    </div>
+                                    <a href="#contact" class="card-btn">
+                                        <i class="fas fa-info-circle"></i>
+                                        Détails
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Formation 6: Design Graphique -->
+                        <div class="formation-card" data-category="design">
+                            <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')">
+                                <div class="card-badge">Adobe Creative</div>
+                            </div>
+                            <div class="card-content">
+                                <h3>Design Graphique & Multimédia</h3>
+                                <div class="card-meta">
+                                    <span><i class="far fa-clock"></i> 5 mois</span>
+                                    <span><i class="fas fa-level-up-alt"></i> Intermédiaire</span>
+                                </div>
+                                <p class="card-desc">
+                                    Apprenez à créer des designs percutants avec la suite Adobe (Photoshop, Illustrator, InDesign).
+                                </p>
+                                <div class="tech-tags">
+                                    <span>Photoshop</span>
+                                    <span>Illustrator</span>
+                                    <span>InDesign</span>
+                                    <span>UI/UX</span>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="price-info">
+                                        <span class="price">200,000 FCFA</span>
+                                        <span class="duration">formation complète</span>
+                                    </div>
+                                    <a href="#contact" class="card-btn">
+                                        <i class="fas fa-info-circle"></i>
+                                        Détails
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Formation 7: Réseaux & Cybersécurité -->
+                        <div class="formation-card" data-category="systeme">
+                            <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')">
+                                <div class="card-badge">CCNA</div>
+                            </div>
+                            <div class="card-content">
+                                <h3>Réseaux & Cybersécurité</h3>
+                                <div class="card-meta">
+                                    <span><i class="far fa-clock"></i> 6 mois</span>
+                                    <span><i class="fas fa-level-up-alt"></i> Avancé</span>
+                                </div>
+                                <p class="card-desc">
+                                    Configuration, gestion et sécurisation des réseaux informatiques. Préparation à la certification CCNA.
+                                </p>
+                                <div class="tech-tags">
+                                    <span>Cisco</span>
+                                    <span>Routage</span>
+                                    <span>Commutation</span>
+                                    <span>Sécurité</span>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="price-info">
+                                        <span class="price">350,000 FCFA</span>
+                                        <span class="duration">formation complète</span>
+                                    </div>
+                                    <a href="#contact" class="card-btn">
+                                        <i class="fas fa-info-circle"></i>
+                                        Détails
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Formation 8: Data Science -->
+                        <div class="formation-card" data-category="ia">
+                            <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')">
+                                <div class="card-badge">Data Science</div>
+                            </div>
+                            <div class="card-content">
+                                <h3>Data Science & Big Data</h3>
+                                <div class="card-meta">
+                                    <span><i class="far fa-clock"></i> 7 mois</span>
+                                    <span><i class="fas fa-level-up-alt"></i> Expert</span>
+                                </div>
+                                <p class="card-desc">
+                                    Analyse de données, statistiques, machine learning et gestion de bases de données massives.
+                                </p>
+                                <div class="tech-tags">
+                                    <span>Python</span>
+                                    <span>SQL</span>
+                                    <span>Tableau</span>
+                                    <span>Hadoop</span>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="price-info">
+                                        <span class="price">400,000 FCFA</span>
+                                        <span class="duration">formation complète</span>
+                                    </div>
+                                    <a href="#contact" class="card-btn">
+                                        <i class="fas fa-info-circle"></i>
+                                        Détails
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Formation 9: Développement Mobile -->
+                        <div class="formation-card" data-category="programmation">
+                            <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')">
+                                <div class="card-badge">Mobile Dev</div>
+                            </div>
+                            <div class="card-content">
+                                <h3>Développement Mobile</h3>
+                                <div class="card-meta">
+                                    <span><i class="far fa-clock"></i> 5 mois</span>
+                                    <span><i class="fas fa-level-up-alt"></i> Avancé</span>
+                                </div>
+                                <p class="card-desc">
+                                    Création d'applications iOS et Android avec React Native et Flutter.
+                                </p>
+                                <div class="tech-tags">
+                                    <span>React Native</span>
+                                    <span>Flutter</span>
+                                    <span>Swift</span>
+                                    <span>Kotlin</span>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="price-info">
+                                        <span class="price">280,000 FCFA</span>
+                                        <span class="duration">formation complète</span>
+                                    </div>
+                                    <a href="#contact" class="card-btn">
+                                        <i class="fas fa-info-circle"></i>
+                                        Détails
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Formation 10: Cloud Computing -->
+                        <div class="formation-card" data-category="systeme">
+                            <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')">
+                                <div class="card-badge">AWS/Azure</div>
+                            </div>
+                            <div class="card-content">
+                                <h3>Cloud Computing</h3>
+                                <div class="card-meta">
+                                    <span><i class="far fa-clock"></i> 4 mois</span>
+                                    <span><i class="fas fa-level-up-alt"></i> Expert</span>
+                                </div>
+                                <p class="card-desc">
+                                    Maîtrisez les services cloud AWS et Azure pour le déploiement d'applications modernes.
+                                </p>
+                                <div class="tech-tags">
+                                    <span>AWS</span>
+                                    <span>Azure</span>
+                                    <span>Docker</span>
+                                    <span>Kubernetes</span>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="price-info">
+                                        <span class="price">320,000 FCFA</span>
+                                        <span class="duration">formation complète</span>
+                                    </div>
+                                    <a href="#contact" class="card-btn">
+                                        <i class="fas fa-info-circle"></i>
+                                        Détails
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Grids pour chaque catégorie (initialement cachées) -->
+                    <div class="cards-grid formations-grid" id="systeme">
+                        <!-- Les formations système seront affichées ici via JavaScript -->
+                    </div>
+                    
+                    <div class="cards-grid formations-grid" id="bureautique">
+                        <!-- Les formations bureautique seront affichées ici via JavaScript -->
+                    </div>
+                    
+                    <div class="cards-grid formations-grid" id="programmation">
+                        <!-- Les formations programmation seront affichées ici via JavaScript -->
+                    </div>
+                    
+                    <div class="cards-grid formations-grid" id="ia">
+                        <!-- Les formations IA seront affichées ici via JavaScript -->
+                    </div>
+                    
+                    <div class="cards-grid formations-grid" id="trading">
+                        <!-- Les formations trading seront affichées ici via JavaScript -->
+                    </div>
+                    
+                    <div class="cards-grid formations-grid" id="design">
+                        <!-- Les formations design seront affichées ici via JavaScript -->
                     </div>
                 </div>
+                
+                <!-- Contrôles de navigation -->
+                <button class="scroll-nav prev" aria-label="Précédent">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="scroll-nav next" aria-label="Suivant">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            
+            <div class="section-footer">
+                <a href="#contact" class="btn-primary">
+                    <i class="fas fa-graduation-cap"></i>
+                    Télécharger le catalogue complet
+                </a>
+            </div>
+        </div>
+    </section>
 
-                <!-- Formation 2 -->
-                <div class="formation-card">
-                    <div class="formation-img" style="background-image: url('https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');"></div>
-                    <div class="formation-content">
-                        <h3>Bureautique</h3>
-                        <p>Devenez expert en outils bureautiques. Formation complète sur Microsoft Office et Libre Office pour une productivité maximale.</p>
-                        <div class="formation-tags">
-                            <span class="tag">Microsoft Office</span>
-                            <span class="tag">Libre Office</span>
-                            <span class="tag">Word</span>
-                            <span class="tag">Excel</span>
-                            <span class="tag">PowerPoint</span>
+    <!-- Section Services avec défilement horizontal -->
+    <section class="section services-section" id="services">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">Nos Services</h2>
+                <p class="section-subtitle">Solutions complètes pour particuliers et entreprises</p>
+            </div>
+            
+            <!-- Conteneur de défilement horizontal -->
+            <div class="horizontal-scroll-container">
+                <div class="scroll-wrapper">
+                    <div class="cards-grid services-grid">
+                        <!-- Service 1: Cyber Café -->
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-wifi"></i>
+                            </div>
+                            <h3>Centre Digital</h3>
+                            <p class="service-desc">
+                                Espace de travail moderne avec internet haut débit, équipements 
+                                professionnels et environnement productif.
+                            </p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> Fibre optique 1Gbps</li>
+                                <li><i class="fas fa-check"></i> Impression couleur/N&B</li>
+                                <li><i class="fas fa-check"></i> Scan haute résolution</li>
+                                <li><i class="fas fa-check"></i> Espace collaboratif</li>
+                            </ul>
+                            <div class="service-footer">
+                                <span class="service-tag">7j/7</span>
+                                <a href="#contact" class="service-btn">
+                                    <i class="fas fa-info-circle"></i>
+                                    Tarifs
+                                </a>
+                            </div>
                         </div>
-                        <p><strong>Durée :</strong> 2 mois (200 heures)</p>
-                        <a href="#contact" class="btn">Plus d'infos</a>
+                        
+                        <!-- Service 2: Reprographie -->
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-print"></i>
+                            </div>
+                            <h3>Reprographie Pro</h3>
+                            <p class="service-desc">
+                                Services professionnels d'impression et de finition de documents 
+                                pour tous vos besoins.
+                            </p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> Impression numérique</li>
+                                <li><i class="fas fa-check"></i> Reliure professionnelle</li>
+                                <li><i class="fas fa-check"></i> Plastification</li>
+                                <li><i class="fas fa-check"></i> Grand format</li>
+                            </ul>
+                            <div class="service-footer">
+                                <span class="service-tag">Express</span>
+                                <a href="#contact" class="service-btn">
+                                    <i class="fas fa-info-circle"></i>
+                                    Tarifs
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- Service 3: Confection -->
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-id-card"></i>
+                            </div>
+                            <h3>Design & Confection</h3>
+                            <p class="service-desc">
+                                Création de supports de communication et d'identification 
+                                professionnels sur mesure.
+                            </p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> Cartes de visite</li>
+                                <li><i class="fas fa-check"></i> Badges sécurisés</li>
+                                <li><i class="fas fa-check"></i> Brochures & flyers</li>
+                                <li><i class="fas fa-check"></i> Design graphique</li>
+                            </ul>
+                            <div class="service-footer">
+                                <span class="service-tag">Sur mesure</span>
+                                <a href="#contact" class="service-btn">
+                                    <i class="fas fa-info-circle"></i>
+                                    Tarifs
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- Service 4: Maintenance -->
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-tools"></i>
+                            </div>
+                            <h3>Maintenance IT</h3>
+                            <p class="service-desc">
+                                Services complets de maintenance et support technique pour 
+                                toutes vos infrastructures informatiques.
+                            </p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> Dépannage hardware/software</li>
+                                <li><i class="fas fa-check"></i> Sécurisation des réseaux</li>
+                                <li><i class="fas fa-check"></i> Sauvegarde de données</li>
+                                <li><i class="fas fa-check"></i> Support à distance</li>
+                            </ul>
+                            <div class="service-footer">
+                                <span class="service-tag">24/7</span>
+                                <a href="#contact" class="service-btn">
+                                    <i class="fas fa-info-circle"></i>
+                                    Tarifs
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- Service 5: Conseil -->
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-headset"></i>
+                            </div>
+                            <h3>Conseil IT</h3>
+                            <p class="service-desc">
+                                Expertise et accompagnement stratégique pour vos projets 
+                                de transformation digitale.
+                            </p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> Audit informatique</li>
+                                <li><i class="fas fa-check"></i> Architecture système</li>
+                                <li><i class="fas fa-check"></i> Migration cloud</li>
+                                <li><i class="fas fa-check"></i> Formation sur site</li>
+                            </ul>
+                            <div class="service-footer">
+                                <span class="service-tag">Expert</span>
+                                <a href="#contact" class="service-btn">
+                                    <i class="fas fa-info-circle"></i>
+                                    Tarifs
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- Service 6: Hébergement Web -->
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-server"></i>
+                            </div>
+                            <h3>Hébergement Web</h3>
+                            <p class="service-desc">
+                                Solutions d'hébergement web performantes et sécurisées pour votre présence en ligne.
+                            </p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> Hébergement mutualisé</li>
+                                <li><i class="fas fa-check"></i> Serveurs dédiés</li>
+                                <li><i class="fas fa-check"></i> Certificats SSL</li>
+                                <li><i class="fas fa-check"></i> Sauvegarde automatique</li>
+                            </ul>
+                            <div class="service-footer">
+                                <span class="service-tag">99.9% uptime</span>
+                                <a href="#contact" class="service-btn">
+                                    <i class="fas fa-info-circle"></i>
+                                    Tarifs
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                
+                <!-- Contrôles de navigation -->
+                <button class="scroll-nav prev" aria-label="Précédent">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="scroll-nav next" aria-label="Suivant">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            
+            <div class="section-footer">
+                <a href="#contact" class="btn-secondary">
+                    <i class="fas fa-concierge-bell"></i>
+                    Demander un devis personnalisé
+                </a>
+            </div>
+        </div>
+    </section>
 
-                <!-- Formation 3 -->
-                <div class="formation-card">
-                    <div class="formation-img" style="background-image: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');"></div>
-                    <div class="formation-content">
-                        <h3>Programmation</h3>
-                        <p>Formation complète en développement logiciel. Apprenez les langages les plus demandés du marché avec nos experts.</p>
-                        <div class="formation-tags">
-                            <span class="tag">HTML/CSS</span>
-                            <span class="tag">JavaScript</span>
-                            <span class="tag">Python</span>
-                            <span class="tag">Java</span>
-                            <span class="tag">C/C++/C#</span>
+    <!-- Section Boutique complète avec toutes les catégories -->
+    <section class="section boutique-section" id="boutique">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">Boutique & Location</h2>
+                <p class="section-subtitle">Matériel informatique, fournitures et services</p>
+            </div>
+            
+            <!-- Catégories -->
+            <div class="categories-tabs">
+                <button class="category-tab active" data-category="location">Location</button>
+                <button class="category-tab" data-category="bureau">Fournitures Bureau</button>
+                <button class="category-tab" data-category="informatique">Matériel IT</button>
+                <button class="category-tab" data-category="services">Services IT</button>
+            </div>
+            
+            <!-- Conteneur de défilement horizontal -->
+            <div class="horizontal-scroll-container">
+                <div class="scroll-wrapper">
+                    <!-- Catégorie Location -->
+                    <div class="cards-grid boutique-grid active" id="location">
+                        <!-- Produit 1 -->
+                        <div class="product-card">
+                            <div class="product-image" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1546054451-aa739bcc2d6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')">
+                                <div class="product-badge">Location</div>
+                            </div>
+                            <div class="product-content">
+                                <h3>PC Portable Pro</h3>
+                                <p class="product-desc">
+                                    Ordinateurs portables récents pour vos événements ou besoins temporaires.
+                                </p>
+                                <div class="product-specs">
+                                    <span><i class="fas fa-microchip"></i> Intel i7</span>
+                                    <span><i class="fas fa-memory"></i> 16GB RAM</span>
+                                </div>
+                                <div class="product-footer">
+                                    <div class="product-price">
+                                        <span class="price">5,000 FCFA</span>
+                                        <span class="period">/jour</span>
+                                    </div>
+                                    <a href="#contact" class="product-btn">
+                                        <i class="fas fa-shopping-cart"></i>
+                                        Réserver
+                                    </a>
+                                </div>
+                            </div>
                         </div>
-                        <p><strong>Durée :</strong> 6 mois (800 heures)</p>
-                        <a href="#contact" class="btn">Plus d'infos</a>
+                        
+                        <!-- Produit 2 -->
+                        <div class="product-card">
+                            <div class="product-image" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1545235617-9465d2a55698?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')">
+                                <div class="product-badge">Location</div>
+                            </div>
+                            <div class="product-content">
+                                <h3>Projecteur HD</h3>
+                                <p class="product-desc">
+                                    Projecteur professionnel Full HD pour présentations et événements.
+                                </p>
+                                <div class="product-specs">
+                                    <span><i class="fas fa-expand"></i> 1080p</span>
+                                    <span><i class="fas fa-lightbulb"></i> 4000 lumens</span>
+                                </div>
+                                <div class="product-footer">
+                                    <div class="product-price">
+                                        <span class="price">10,000 FCFA</span>
+                                        <span class="period">/jour</span>
+                                    </div>
+                                    <a href="#contact" class="product-btn">
+                                        <i class="fas fa-shopping-cart"></i>
+                                        Réserver
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Produit 3 -->
+                        <div class="product-card">
+                            <div class="product-image" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')">
+                                <div class="product-badge">Location</div>
+                            </div>
+                            <div class="product-content">
+                                <h3>Système Conférence</h3>
+                                <p class="product-desc">
+                                    Équipement audio-visuel complet pour vos conférences et réunions.
+                                </p>
+                                <div class="product-specs">
+                                    <span><i class="fas fa-microphone"></i> Audio pro</span>
+                                    <span><i class="fas fa-video"></i> Caméra 4K</span>
+                                </div>
+                                <div class="product-footer">
+                                    <div class="product-price">
+                                        <span class="price">Sur devis</span>
+                                        <span class="period">personnalisé</span>
+                                    </div>
+                                    <a href="#contact" class="product-btn">
+                                        <i class="fas fa-shopping-cart"></i>
+                                        Réserver
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Produit 4 -->
+                        <div class="product-card">
+                            <div class="product-image" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1498049860653-97c40e4d1c43?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')">
+                                <div class="product-badge">Location</div>
+                            </div>
+                            <div class="product-content">
+                                <h3>WiFi Professionnel</h3>
+                                <p class="product-desc">
+                                    Solution WiFi temporaire pour événements avec connexion dédiée.
+                                </p>
+                                <div class="product-specs">
+                                    <span><i class="fas fa-wifi"></i> 100Mbps</span>
+                                    <span><i class="fas fa-user-friends"></i> 100+ utilisateurs</span>
+                                </div>
+                                <div class="product-footer">
+                                    <div class="product-price">
+                                        <span class="price">15,000 FCFA</span>
+                                        <span class="period">/jour</span>
+                                    </div>
+                                    <a href="#contact" class="product-btn">
+                                        <i class="fas fa-shopping-cart"></i>
+                                        Réserver
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Produit 5 -->
+                        <div class="product-card">
+                            <div class="product-image" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1593640408182-31c70c8268f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')">
+                                <div class="product-badge">Location</div>
+                            </div>
+                            <div class="product-content">
+                                <h3>Photocopieuse Professionnelle</h3>
+                                <p class="product-desc">
+                                    Photocopieuse multifonction couleur pour événements et besoins temporaires.
+                                </p>
+                                <div class="product-specs">
+                                    <span><i class="fas fa-print"></i> 40 pages/min</span>
+                                    <span><i class="fas fa-copy"></i> Recto-verso</span>
+                                </div>
+                                <div class="product-footer">
+                                    <div class="product-price">
+                                        <span class="price">20,000 FCFA</span>
+                                        <span class="period">/jour</span>
+                                    </div>
+                                    <a href="#contact" class="product-btn">
+                                        <i class="fas fa-shopping-cart"></i>
+                                        Réserver
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Catégorie Fournitures Bureau -->
+                    <div class="cards-grid boutique-grid" id="bureau">
+                        <!-- Produit 1 -->
+                        <div class="product-card">
+                            <div class="product-image" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1586232702178-f044c5f4d4b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')">
+                                <div class="product-badge">Vente</div>
+                            </div>
+                            <div class="product-content">
+                                <h3>Papier A4 Premium</h3>
+                                <p class="product-desc">
+                                    Papier A4 de haute qualité pour l'impression de documents professionnels.
+                                </p>
+                                <div class="product-specs">
+                                    <span><i class="fas fa-box"></i> 500 feuilles</span>
+                                    <span><i class="fas fa-weight"></i> 80g/m²</span>
+                                </div>
+                                <div class="product-footer">
+                                    <div class="product-price">
+                                        <span class="price">3,500 FCFA</span>
+                                        <span class="period">/paquet</span>
+                                    </div>
+                                    <a href="#contact" class="product-btn">
+                                        <i class="fas fa-shopping-cart"></i>
+                                        Acheter
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Produit 2 -->
+                        <div class="product-card">
+                            <div class="product-image" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')">
+                                <div class="product-badge">Vente</div>
+                            </div>
+                            <div class="product-content">
+                                <h3>Cartouches d'Encre</h3>
+                                <p class="product-desc">
+                                    Cartouches d'encre originales et compatibles pour toutes les marques d'imprimantes.
+                                </p>
+                                <div class="product-specs">
+                                    <span><i class="fas fa-print"></i> HP/Canon</span>
+                                    <span><i class="fas fa-fill-drip"></i> Noir & Couleur</span>
+                                </div>
+                                <div class="product-footer">
+                                    <div class="product-price">
+                                        <span class="price">8,000 FCFA</span>
+                                        <span class="period">/unité</span>
+                                    </div>
+                                    <a href="#contact" class="product-btn">
+                                        <i class="fas fa-shopping-cart"></i>
+                                        Acheter
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Produit 3 -->
+                        <div class="product-card">
+                            <div class="product-image" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')">
+                                <div class="product-badge">Vente</div>
+                            </div>
+                            <div class="product-content">
+                                <h3>Classeurs & Archivage</h3>
+                                <p class="product-desc">
+                                    Classeurs, chemises et solutions d'archivage pour organiser vos documents.
+                                </p>
+                                <div class="product-specs">
+                                    <span><i class="fas fa-folder"></i> Divers formats</span>
+                                    <span><i class="fas fa-palette"></i> Multi-couleurs</span>
+                                </div>
+                                <div class="product-footer">
+                                    <div class="product-price">
+                                        <span class="price">1,500 FCFA</span>
+                                        <span class="period">/unité</span>
+                                    </div>
+                                    <a href="#contact" class="product-btn">
+                                        <i class="fas fa-shopping-cart"></i>
+                                        Acheter
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Produit 4 -->
+                        <div class="product-card">
+                            <div class="product-image" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1545235617-9465d2a55698?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')">
+                                <div class="product-badge">Vente</div>
+                            </div>
+                            <div class="product-content">
+                                <h3>Stylos & Fournitures</h3>
+                                <p class="product-desc">
+                                    Pack complet de fournitures de bureau : stylos, surligneurs, agrafeuses, etc.
+                                </p>
+                                <div class="product-specs">
+                                    <span><i class="fas fa-pen"></i> Pack complet</span>
+                                    <span><i class="fas fa-cube"></i> 50 pièces</span>
+                                </div>
+                                <div class="product-footer">
+                                    <div class="product-price">
+                                        <span class="price">12,000 FCFA</span>
+                                        <span class="period">/pack</span>
+                                    </div>
+                                    <a href="#contact" class="product-btn">
+                                        <i class="fas fa-shopping-cart"></i>
+                                        Acheter
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Produit 5 -->
+                        <div class="product-card">
+                            <div class="product-image" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')">
+                                <div class="product-badge">Vente</div>
+                            </div>
+                            <div class="product-content">
+                                <h3>Meubles de Bureau</h3>
+                                <p class="product-desc">
+                                    Bureaux, chaises ergonomiques et armoires pour votre espace de travail.
+                                </p>
+                                <div class="product-specs">
+                                    <span><i class="fas fa-chair"></i> Ergonomique</span>
+                                    <span><i class="fas fa-paint-roller"></i> Design moderne</span>
+                                </div>
+                                <div class="product-footer">
+                                    <div class="product-price">
+                                        <span class="price">À partir de 45,000 FCFA</span>
+                                        <span class="period">/unité</span>
+                                    </div>
+                                    <a href="#contact" class="product-btn">
+                                        <i class="fas fa-shopping-cart"></i>
+                                        Acheter
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Catégorie Matériel IT -->
+                    <div class="cards-grid boutique-grid" id="informatique">
+                        <!-- Produit 1 -->
+                        <div class="product-card">
+                            <div class="product-image" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')">
+                                <div class="product-badge">Vente</div>
+                            </div>
+                            <div class="product-content">
+                                <h3>PC Bureau Gaming</h3>
+                                <p class="product-desc">
+                                    Ordinateur de bureau puissant pour le gaming et le montage vidéo.
+                                </p>
+                                <div class="product-specs">
+                                    <span><i class="fas fa-microchip"></i> Intel i9</span>
+                                    <span><i class="fas fa-memory"></i> 32GB RAM</span>
+                                </div>
+                                <div class="product-footer">
+                                    <div class="product-price">
+                                        <span class="price">750,000 FCFA</span>
+                                        <span class="period">unité</span>
+                                    </div>
+                                    <a href="#contact" class="product-btn">
+                                        <i class="fas fa-shopping-cart"></i>
+                                        Acheter
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Produit 2 -->
+                        <div class="product-card">
+                            <div class="product-image" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')">
+                                <div class="product-badge">Vente</div>
+                            </div>
+                            <div class="product-content">
+                                <h3>Écran 4K 27"</h3>
+                                <p class="product-desc">
+                                    Écran 4K UHD pour une expérience visuelle exceptionnelle.
+                                </p>
+                                <div class="product-specs">
+                                    <span><i class="fas fa-desktop"></i> 27 pouces</span>
+                                    <span><i class="fas fa-tv"></i> 4K UHD</span>
+                                </div>
+                                <div class="product-footer">
+                                    <div class="product-price">
+                                        <span class="price">150,000 FCFA</span>
+                                        <span class="period">unité</span>
+                                    </div>
+                                    <a href="#contact" class="product-btn">
+                                        <i class="fas fa-shopping-cart"></i>
+                                        Acheter
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Produit 3 -->
+                        <div class="product-card">
+                            <div class="product-image" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1593640408182-31c70c8268f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')">
+                                <div class="product-badge">Vente</div>
+                            </div>
+                            <div class="product-content">
+                                <h3>Clavier & Souris Gaming</h3>
+                                <p class="product-desc">
+                                    Clavier mécanique RGB et souris gaming haute précision.
+                                </p>
+                                <div class="product-specs">
+                                    <span><i class="fas fa-keyboard"></i> Mécanique</span>
+                                    <span><i class="fas fa-mouse"></i> 16000 DPI</span>
+                                </div>
+                                <div class="product-footer">
+                                    <div class="product-price">
+                                        <span class="price">25,000 FCFA</span>
+                                        <span class="period">pack</span>
+                                    </div>
+                                    <a href="#contact" class="product-btn">
+                                        <i class="fas fa-shopping-cart"></i>
+                                        Acheter
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Produit 4 -->
+                        <div class="product-card">
+                            <div class="product-image" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')">
+                                <div class="product-badge">Vente</div>
+                            </div>
+                            <div class="product-content">
+                                <h3>Disque Dur Externe 2To</h3>
+                                <p class="product-desc">
+                                    Disque dur externe portable pour le stockage et la sauvegarde de données.
+                                </p>
+                                <div class="product-specs">
+                                    <span><i class="fas fa-hdd"></i> 2To</span>
+                                    <span><i class="fas fa-bolt"></i> USB 3.0</span>
+                                </div>
+                                <div class="product-footer">
+                                    <div class="product-price">
+                                        <span class="price">45,000 FCFA</span>
+                                        <span class="period">unité</span>
+                                    </div>
+                                    <a href="#contact" class="product-btn">
+                                        <i class="fas fa-shopping-cart"></i>
+                                        Acheter
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Produit 5 -->
+                        <div class="product-card">
+                            <div class="product-image" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1593642632823-8f785ba67e45?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')">
+                                <div class="product-badge">Vente</div>
+                            </div>
+                            <div class="product-content">
+                                <h3>Tablette Graphique</h3>
+                                <p class="product-desc">
+                                    Tablette graphique professionnelle pour designers et illustrateurs.
+                                </p>
+                                <div class="product-specs">
+                                    <span><i class="fas fa-pen-nib"></i> Sensibilité 8192</span>
+                                    <span><i class="fas fa-tablet-alt"></i> 10x6 pouces</span>
+                                </div>
+                                <div class="product-footer">
+                                    <div class="product-price">
+                                        <span class="price">85,000 FCFA</span>
+                                        <span class="period">unité</span>
+                                    </div>
+                                    <a href="#contact" class="product-btn">
+                                        <i class="fas fa-shopping-cart"></i>
+                                        Acheter
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Catégorie Services IT -->
+                    <div class="cards-grid boutique-grid" id="services">
+                        <!-- Produit 1 -->
+                        <div class="product-card">
+                            <div class="product-image" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')">
+                                <div class="product-badge">Service</div>
+                            </div>
+                            <div class="product-content">
+                                <h3>Installation Logicielle</h3>
+                                <p class="product-desc">
+                                    Installation et configuration de logiciels professionnels et systèmes d'exploitation.
+                                </p>
+                                <div class="product-specs">
+                                    <span><i class="fas fa-cogs"></i> Windows/Mac</span>
+                                    <span><i class="fas fa-tools"></i> Configuration</span>
+                                </div>
+                                <div class="product-footer">
+                                    <div class="product-price">
+                                        <span class="price">15,000 FCFA</span>
+                                        <span class="period">/installation</span>
+                                    </div>
+                                    <a href="#contact" class="product-btn">
+                                        <i class="fas fa-shopping-cart"></i>
+                                        Commander
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Produit 2 -->
+                        <div class="product-card">
+                            <div class="product-image" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')">
+                                <div class="product-badge">Service</div>
+                            </div>
+                            <div class="product-content">
+                                <h3>Récupération de Données</h3>
+                                <p class="product-desc">
+                                    Récupération de données perdues ou supprimées sur tous types de supports.
+                                </p>
+                                <div class="product-specs">
+                                    <span><i class="fas fa-hdd"></i> HDD/SSD</span>
+                                    <span><i class="fas fa-memory"></i> Clé USB</span>
+                                </div>
+                                <div class="product-footer">
+                                    <div class="product-price">
+                                        <span class="price">Sur devis</span>
+                                        <span class="period">selon support</span>
+                                    </div>
+                                    <a href="#contact" class="product-btn">
+                                        <i class="fas fa-shopping-cart"></i>
+                                        Commander
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Produit 3 -->
+                        <div class="product-card">
+                            <div class="product-image" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')">
+                                <div class="product-badge">Service</div>
+                            </div>
+                            <div class="product-content">
+                                <h3>Audit Sécurité Informatique</h3>
+                                <p class="product-desc">
+                                    Audit complet de votre infrastructure informatique et recommandations de sécurité.
+                                </p>
+                                <div class="product-specs">
+                                    <span><i class="fas fa-shield-alt"></i> Sécurité</span>
+                                    <span><i class="fas fa-network-wired"></i> Réseaux</span>
+                                </div>
+                                <div class="product-footer">
+                                    <div class="product-price">
+                                        <span class="price">50,000 FCFA</span>
+                                        <span class="period">/audit</span>
+                                    </div>
+                                    <a href="#contact" class="product-btn">
+                                        <i class="fas fa-shopping-cart"></i>
+                                        Commander
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Produit 4 -->
+                        <div class="product-card">
+                            <div class="product-image" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')">
+                                <div class="product-badge">Service</div>
+                            </div>
+                            <div class="product-content">
+                                <h3>Formation Sur Mesure</h3>
+                                <p class="product-desc">
+                                    Formation personnalisée en entreprise sur les technologies de votre choix.
+                                </p>
+                                <div class="product-specs">
+                                    <span><i class="fas fa-chalkboard-teacher"></i> En entreprise</span>
+                                    <span><i class="fas fa-users"></i> Jusqu'à 10 personnes</span>
+                                </div>
+                                <div class="product-footer">
+                                    <div class="product-price">
+                                        <span class="price">Sur devis</span>
+                                        <span class="period">/session</span>
+                                    </div>
+                                    <a href="#contact" class="product-btn">
+                                        <i class="fas fa-shopping-cart"></i>
+                                        Commander
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Produit 5 -->
+                        <div class="product-card">
+                            <div class="product-image" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')">
+                                <div class="product-badge">Service</div>
+                            </div>
+                            <div class="product-content">
+                                <h3>Développement Web Sur Mesure</h3>
+                                <p class="product-desc">
+                                    Création de sites web et applications sur mesure pour votre entreprise.
+                                </p>
+                                <div class="product-specs">
+                                    <span><i class="fas fa-code"></i> Site vitrine</span>
+                                    <span><i class="fas fa-shopping-cart"></i> E-commerce</span>
+                                </div>
+                                <div class="product-footer">
+                                    <div class="product-price">
+                                        <span class="price">Sur devis</span>
+                                        <span class="period">projet</span>
+                                    </div>
+                                    <a href="#contact" class="product-btn">
+                                        <i class="fas fa-shopping-cart"></i>
+                                        Commander
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                
+                <!-- Contrôles de navigation -->
+                <button class="scroll-nav prev" aria-label="Précédent">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="scroll-nav next" aria-label="Suivant">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            
+            <!-- Bannière promotion -->
+            <div class="promo-banner">
+                <div class="promo-content">
+                    <i class="fas fa-percentage"></i>
+                    <div>
+                        <h3>Tarifs Entreprises</h3>
+                        <p>Remises spéciales pour les entreprises et institutions éducatives</p>
+                    </div>
+                </div>
+                <a href="#contact" class="promo-btn">
+                    <i class="fas fa-file-invoice"></i>
+                    Demander un devis
+                </a>
+            </div>
+        </div>
+    </section>
 
-                <!-- Formation 4 -->
-                <div class="formation-card">
-                    <div class="formation-img" style="background-image: url('https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');"></div>
-                    <div class="formation-content">
-                        <h3>Intelligence Artificielle</h3>
-                        <p>Plongez dans le futur avec notre formation en IA. Découvrez le machine learning, le deep learning et leurs applications concrètes.</p>
-                        <div class="formation-tags">
-                            <span class="tag">Machine Learning</span>
-                            <span class="tag">Deep Learning</span>
-                            <span class="tag">Python</span>
-                            <span class="tag">TensorFlow</span>
-                            <span class="tag">Data Science</span>
+    <!-- Section Équipe avec défilement horizontal -->
+    <section class="section team-section" id="equipe">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">Notre Équipe d'Experts</h2>
+                <p class="section-subtitle">Des professionnels certifiés à votre service</p>
+            </div>
+            
+            <!-- Conteneur de défilement horizontal -->
+            <div class="horizontal-scroll-container">
+                <div class="scroll-wrapper">
+                    <div class="cards-grid team-grid">
+                        <!-- Membre 1 -->
+                        <div class="team-card">
+                            <div class="team-image">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Expert Systèmes">
+                                <div class="team-overlay">
+                                    <div class="social-icons">
+                                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                                        <a href="#"><i class="fab fa-github"></i></a>
+                                        <a href="#"><i class="fas fa-globe"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="team-content">
+                                <h3>Abdoulaye M.</h3>
+                                <p class="team-title">Expert Systèmes & Réseaux</p>
+                                <p class="team-desc">
+                                    15 ans d'expérience en infrastructure IT et sécurité des systèmes.
+                                </p>
+                                <div class="team-skills">
+                                    <span>MCSE</span>
+                                    <span>CCNA</span>
+                                    <span>Linux+</span>
+                                </div>
+                            </div>
                         </div>
-                        <p><strong>Durée :</strong> 8 mois (1000 heures)</p>
-                        <a href="#contact" class="btn">Plus d'infos</a>
+                        
+                        <!-- Membre 2 -->
+                        <div class="team-card">
+                            <div class="team-image">
+                                <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Spécialiste Bureautique">
+                                <div class="team-overlay">
+                                    <div class="social-icons">
+                                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                                        <a href="#"><i class="fab fa-github"></i></a>
+                                        <a href="#"><i class="fas fa-globe"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="team-content">
+                                <h3>Fatima D.</h3>
+                                <p class="team-title">Expert Suite Bureautique</p>
+                                <p class="team-desc">
+                                    Formatrice certifiée Microsoft avec expertise en automatisation Office.
+                                </p>
+                                <div class="team-skills">
+                                    <span>MOS Expert</span>
+                                    <span>Power BI</span>
+                                    <span>VBA</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Membre 3 -->
+                        <div class="team-card">
+                            <div class="team-image">
+                                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Développeur Full Stack">
+                                <div class="team-overlay">
+                                    <div class="social-icons">
+                                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                                        <a href="#"><i class="fab fa-github"></i></a>
+                                        <a href="#"><i class="fas fa-globe"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="team-content">
+                                <h3>Ibrahim S.</h3>
+                                <p class="team-title">Architecte Logiciel</p>
+                                <p class="team-desc">
+                                    Spécialiste en développement full stack et architecture cloud.
+                                </p>
+                                <div class="team-skills">
+                                    <span>AWS</span>
+                                    <span>React</span>
+                                    <span>Python</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Membre 4 -->
+                        <div class="team-card">
+                            <div class="team-image">
+                                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Expert Trading">
+                                <div class="team-overlay">
+                                    <div class="social-icons">
+                                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                                        <a href="#"><i class="fab fa-github"></i></a>
+                                        <a href="#"><i class="fas fa-globe"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="team-content">
+                                <h3>Aïssata K.</h3>
+                                <p class="team-title">Analyste Marchés Financiers</p>
+                                <p class="team-desc">
+                                    Expert en trading algorithmique et analyse technique avancée.
+                                </p>
+                                <div class="team-skills">
+                                    <span>CFA</span>
+                                    <span>Python</span>
+                                    <span>Quant</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Membre 5 -->
+                        <div class="team-card">
+                            <div class="team-image">
+                                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Expert IA">
+                                <div class="team-overlay">
+                                    <div class="social-icons">
+                                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                                        <a href="#"><i class="fab fa-github"></i></a>
+                                        <a href="#"><i class="fas fa-globe"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="team-content">
+                                <h3>Marie L.</h3>
+                                <p class="team-title">Data Scientist</p>
+                                <p class="team-desc">
+                                    Spécialiste en Machine Learning et intelligence artificielle.
+                                </p>
+                                <div class="team-skills">
+                                    <span>TensorFlow</span>
+                                    <span>PyTorch</span>
+                                    <span>MLOps</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Membre 6 -->
+                        <div class="team-card">
+                            <div class="team-image">
+                                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Expert Cybersécurité">
+                                <div class="team-overlay">
+                                    <div class="social-icons">
+                                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                                        <a href="#"><i class="fab fa-github"></i></a>
+                                        <a href="#"><i class="fas fa-globe"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="team-content">
+                                <h3>Mohamed C.</h3>
+                                <p class="team-title">Expert Cybersécurité</p>
+                                <p class="team-desc">
+                                    Spécialiste en sécurité des systèmes et protection des données.
+                                </p>
+                                <div class="team-skills">
+                                    <span>CEH</span>
+                                    <span>CISSP</span>
+                                    <span>Pentest</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contrôles de navigation -->
+                <button class="scroll-nav prev" aria-label="Précédent">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="scroll-nav next" aria-label="Suivant">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            
+            <div class="section-footer">
+                <a href="#contact" class="btn-secondary">
+                    <i class="fas fa-users"></i>
+                    Rencontrer notre équipe
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Témoignages -->
+    <section class="section testimonials-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">Témoignages</h2>
+                <p class="section-subtitle">Ce que disent nos clients et étudiants</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <i class="fas fa-quote-left"></i>
+                        <p>Formation excellente et formateurs compétents. J'ai pu décrocher un emploi immédiatement après ma certification.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Client">
+                        </div>
+                        <div class="author-info">
+                            <h4>Moussa H.</h4>
+                            <p>Administrateur Systèmes</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <i class="fas fa-quote-left"></i>
+                        <p>Le service de maintenance IT est impeccable. Réactif et professionnel. Je recommande vivement!</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Client">
+                        </div>
+                        <div class="author-info">
+                            <h4>Hadiza M.</h4>
+                            <p>Directrice d'école</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <i class="fas fa-quote-left"></i>
+                        <p>La formation trading m'a permis de comprendre les marchés financiers et de développer une stratégie gagnante.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Client">
+                        </div>
+                        <div class="author-info">
+                            <h4>Amadou B.</h4>
+                            <p>Trader Indépendant</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Formateurs section -->
-    <section id="formateurs">
-        <div class="container">
-            <h2 class="section-title">Nos formateurs experts</h2>
-            <div class="formateur-cards">
-                <div class="formateur-card">
-                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Thomas Martin" class="formateur-img">
-                    <h3>Larwanou</h3>
-                    <p>Expert en systèmes d'exploitation avec 12 ans d'expérience en administration système.</p>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-github"></i></a>
-                    </div>
-                </div>
-
-                <div class="formateur-card">
-                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah Dubois" class="formateur-img">
-                    <h3>Halimatou</h3>
-                    <p>Spécialiste en bureautique et productivité, formatrice certifiée Microsoft.</p>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                    </div>
-                </div>
-
-                <div class="formateur-card">
-                    <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Pierre Bernard" class="formateur-img">
-                    <h3>Ousmane</h3>
-                    <p>Développeur fullstack avec expertise en Python, Java et C++, 15 ans d'expérience.</p>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-github"></i></a>
-                    </div>
-                </div>
-
-                <div class="formateur-card">
-                    <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Julie Petit" class="formateur-img">
-                    <h3>Hawaou</h3>
-                    <p>Data scientist, spécialisée en intelligence artificielle et machine learning.</p>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact section -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <h2 class="section-title">Contactez-nous</h2>
-            <div class="contact-container">
+    <!-- Section Contact -->
+    <section class="section contact-section" id="contact">
+        <div class="section-container">
+            <div class="contact-wrapper">
                 <div class="contact-info">
-                    <h3>Prenez rendez-vous pour une visite</h3>
-                    <p>Notre équipe est à votre disposition pour répondre à toutes vos questions et vous orienter vers la formation la plus adaptée à votre projet.</p>
-
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h4>Adresse</h4>
-                            <p>Rue des Technologies, Quartier ADS<br>Maradi, Niger</p>
+                    <div class="info-card">
+                        <h3><i class="fas fa-map-marker-alt"></i> Notre Centre</h3>
+                        <address>
+                            Rue du Commerce, Quartier Administratif<br>
+                            <strong>Maradi, Niger</strong>
+                        </address>
+                        
+                        <div class="contact-details">
+                            <div class="detail-group">
+                                <h4><i class="fas fa-phone"></i> Contact</h4>
+                                <div class="phone-numbers">
+                                    <a href="tel:+22796565081">+227 96 56 50 81</a>
+                                </div>
+                            </div>
+                            
+                            <div class="detail-group">
+                                <h4><i class="fas fa-envelope"></i> Email</h4>
+                                <a href="mailto:informatiquedefis@gmail.com" class="email-link">
+                                    informatiquedefis@gmail.com
+                                </a>
+                            </div>
+                            
+                            <div class="detail-group">
+                                <h4><i class="fas fa-clock"></i> Horaires</h4>
+                                <div class="hours-info">
+                                    <p><strong>Lundi - Vendredi :</strong> 8h00 - 18h00</p>
+                                    <p><strong>Samedi :</strong> 9h00 - 17h00</p>
+                                    <p><strong>Dimanche :</strong> 10h00 - 15h00</p>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <h4>Téléphone</h4>
-                            <p>+227 96 56 50 81<br>+227 97 23 69 74<br>+227 87 54 47 68</p>
-                        </div>
-                    </div>
-
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h4>Email</h4>
-                            <p>informatiquedefis@gmail.com</p>
-                        </div>
-                    </div>
-
-                    <div class="contact-item">
-                        <i class="fas fa-clock"></i>
-                        <div>
-                            <h4>Horaires d'ouverture</h4>
-                            <p>Lundi - Vendredi : 8h00 - 18h00<br>Samedi - Dimanche : 9h00 - 17h00</p>
+                        
+                        <div class="social-connect">
+                            <h4>Réseaux sociaux</h4>
+                            <div class="social-links">
+                                <a href="#" class="social-link">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="social-link">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                                <a href="#" class="social-link">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" class="social-link">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
-
+                
                 <div class="contact-form">
-                    <h3>Envoyez-nous un message</h3>
-                    <form id="contactForm">
-                        <input type="text" placeholder="Votre nom" required>
-                        <input type="email" placeholder="Votre email" required>
-                        <input type="tel" placeholder="Votre téléphone">
-                        <select required class="form-select">
-                            <option value="" disabled selected>Sélectionnez une formation</option>
-                            <option value="systeme">Systèmes d'exploitation</option>
-                            <option value="bureautique">Bureautique</option>
-                            <option value="programmation">Programmation</option>
-                            <option value="ia">Intelligence Artificielle</option>
-                            <option value="autre">Autre</option>
-                        </select>
-                        <textarea placeholder="Votre message" rows="6" required></textarea>
-                        <button type="submit" class="btn">Envoyer le message</button>
+                    <div class="form-header">
+                        <h3>Contactez-nous</h3>
+                        <p>Envoyez-nous votre demande, nous vous répondrons rapidement</p>
+                    </div>
+                    
+                    <form id="contactForm" novalidate>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <input type="text" name="name" placeholder="Votre nom complet" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" name="email" placeholder="Votre email" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="tel" name="phone" placeholder="Votre téléphone" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <select name="subject" required>
+                                <option value="" disabled selected>Sélectionnez un sujet</option>
+                                <option value="formation">Information formation</option>
+                                <option value="service">Demande de service</option>
+                                <option value="achat">Achat matériel</option>
+                                <option value="location">Location équipement</option>
+                                <option value="devis">Demande de devis</option>
+                                <option value="autre">Autre demande</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <textarea name="message" placeholder="Décrivez votre besoin..." rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-paper-plane"></i>
+                            Envoyer le message
+                        </button>
                     </form>
                 </div>
             </div>
@@ -264,55 +1803,104 @@
     </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-about">
-                    <a href="#" class="footer-logo">Défis <span>Informatique</span></a>
-                    <p>Centre de formation aux métiers de l'informatique depuis 2010. Nous formons les talents de demain avec des méthodes pédagogiques innovantes.</p>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <!-- Colonne 1 -->
+                <div class="footer-col">
+                    <div class="footer-brand">
+                        <div class="logo-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <div class="footer-logo-text">
+                            <h4>Défis Informatique</h4>
+                            <p>Centre d'Excellence Technologique</p>
+                        </div>
+                    </div>
+                    <p class="footer-description">
+                        Leader de la formation et des services informatiques à Maradi depuis 2010.
+                        Excellence, Innovation et Professionnalisme.
+                    </p>
+                    
+                    <div class="newsletter-subscribe">
+                        <h5>Newsletter</h5>
+                        <p class="newsletter-text">Recevez nos offres et actualités</p>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Votre email" required>
+                            <button type="submit">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </form>
                     </div>
                 </div>
-
-                <div class="footer-links">
-                    <h4>Formations</h4>
-                    <ul>
-                        <li><a href="#formations">Systèmes d'exploitation</a></li>
-                        <li><a href="#formations">Bureautique</a></li>
-                        <li><a href="#formations">Programmation</a></li>
-                        <li><a href="#formations">Intelligence Artificielle</a></li>
+                
+                <!-- Colonne 2 -->
+                <div class="footer-col">
+                    <h5>Liens rapides</h5>
+                    <ul class="footer-links">
+                        <li><a href="#accueil"><i class="fas fa-chevron-right"></i> Accueil</a></li>
+                        <li><a href="#apropos"><i class="fas fa-chevron-right"></i> À propos</a></li>
+                        <li><a href="#formations"><i class="fas fa-chevron-right"></i> Formations</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <li><a href="#boutique"><i class="fas fa-chevron-right"></i> Boutique</a></li>
+                        <li><a href="#equipe"><i class="fas fa-chevron-right"></i> Équipe</a></li>
                     </ul>
                 </div>
-
-                <div class="footer-links">
-                    <h4>Liens rapides</h4>
-                    <ul>
-                        <li><a href="#accueil">Accueil</a></li>
-                        <li><a href="#apropos">À propos</a></li>
-                        <li><a href="#formations">Formations</a></li>
-                        <li><a href="#formateurs">Formateurs</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                
+                <!-- Colonne 3 -->
+                <div class="footer-col">
+                    <h5>Nos formations</h5>
+                    <ul class="footer-links">
+                        <li><a href="#formations"><i class="fas fa-chevron-right"></i> Systèmes d'exploitation</a></li>
+                        <li><a href="#formations"><i class="fas fa-chevron-right"></i> Suite bureautique</a></li>
+                        <li><a href="#formations"><i class="fas fa-chevron-right"></i> Programmation</a></li>
+                        <li><a href="#formations"><i class="fas fa-chevron-right"></i> Intelligence Artificielle</a></li>
+                        <li><a href="#formations"><i class="fas fa-chevron-right"></i> Trading financier</a></li>
+                        <li><a href="#formations"><i class="fas fa-chevron-right"></i> Cybersécurité</a></li>
                     </ul>
                 </div>
-
-                <div class="footer-links">
-                    <h4>Informations</h4>
-                    <ul>
-                        <li><a href="#">Financement</a></li>
-                        <li><a href="#">Programmes détaillés</a></li>
-                        <li><a href="#">Témoignages</a></li>
-                        <li><a href="#">Mentions légales</a></li>
-                        <li><a href="#">Politique de confidentialité</a></li>
-                    </ul>
+                
+                <!-- Colonne 4 -->
+                <div class="footer-col">
+                    <h5>Contact & informations</h5>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-map-marker-alt"></i> Rue du Commerce, Maradi, Niger</p>
+                        <p><i class="fas fa-phone"></i> +227 96 56 50 81</p>
+                        <p><i class="fas fa-phone"></i> +227 97 23 69 74</p>
+                        <p><i class="fas fa-phone"></i> +227 87 54 47 68</p>
+                        <p><i class="fas fa-envelope"></i> informatiquedefis@gmail.com</p>
+                    </div>
+                    
+                    <div class="footer-hours">
+                        <h5>Horaires d'ouverture</h5>
+                        <p><strong>Lun-Ven:</strong> 8h-18h</p>
+                        <p><strong>Sam:</strong> 9h-17h</p>
+                        <p><strong>Dim:</strong> 10h-15h</p>
+                    </div>
+                    
+                    <div class="payment-methods">
+                        <h5>Paiements acceptés</h5>
+                        <div class="payment-icons">
+                            <i class="fas fa-money-bill-wave" title="Espèces"></i>
+                            <i class="fas fa-credit-card" title="Carte bancaire"></i>
+                            <i class="fas fa-mobile-alt" title="Mobile money"></i>
+                            <i class="fas fa-university" title="Virement bancaire"></i>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-            <div class="copyright">
-                <p>&copy; 2023 Défis Informatique. Tous droits réservés. | Maradi, Niger</p>
+            
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>&copy; <span id="currentYear">2024</span> Défis Informatique - Centre d'Excellence Technologique. Tous droits réservés.</p>
+                    <p class="location"><i class="fas fa-map-pin"></i> Maradi, Niger</p>
+                </div>
+                
+                <div class="footer-legal">
+                    <a href="#"><i class="fas fa-file-contract"></i> Mentions légales</a>
+                    <a href="#"><i class="fas fa-user-shield"></i> Politique de confidentialité</a>
+                    <a href="#"><i class="fas fa-file-alt"></i> Conditions générales</a>
+                </div>
             </div>
         </div>
     </footer>
