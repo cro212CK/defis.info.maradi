@@ -1,4 +1,4 @@
-// script.js
+// script.js - Version corrigée et optimisée
 document.addEventListener('DOMContentLoaded', function() {
     // ===========================================
     // VARIABLES GLOBALES
@@ -7,27 +7,60 @@ document.addEventListener('DOMContentLoaded', function() {
     const menuToggle = document.querySelector('.menu-toggle');
     const mainNav = document.querySelector('.main-nav');
     const navLinks = document.querySelectorAll('.nav-link');
-    const currentYear = new Date().getFullYear();
+    let observers = [];
     
     // ===========================================
-    // 1. NAVIGATION & HEADER
+    // 1. FONCTIONS UTILITAIRES
+    // ===========================================
+    
+    // Validation email
+    function isValidEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email);
+    }
+    
+    // Animation de compteur
+    function animateCounter(element, target, duration = 2000) {
+        return new Promise(resolve => {
+            let start = 0;
+            const increment = target / (duration / 16);
+            const timer = setInterval(() => {
+                start += increment;
+                if (start >= target) {
+                    element.textContent = target + (element.dataset.suffix || '');
+                    clearInterval(timer);
+                    resolve();
+                } else {
+                    element.textContent = Math.floor(start);
+                }
+            }, 16);
+        });
+    }
+    
+    // ===========================================
+    // 2. NAVIGATION & HEADER
     // ===========================================
     
     // Menu mobile
-    menuToggle.addEventListener('click', () => {
-        menuToggle.classList.toggle('active');
-        mainNav.classList.toggle('active');
-        document.body.style.overflow = mainNav.classList.contains('active') ? 'hidden' : '';
-    });
-    
-    // Fermer le menu au clic sur un lien
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            menuToggle.classList.remove('active');
-            mainNav.classList.remove('active');
-            document.body.style.overflow = '';
+    if (menuToggle && mainNav) {
+        menuToggle.addEventListener('click', () => {
+            const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+            menuToggle.classList.toggle('active');
+            menuToggle.setAttribute('aria-expanded', !isExpanded);
+            mainNav.classList.toggle('active');
+            document.body.style.overflow = mainNav.classList.contains('active') ? 'hidden' : '';
         });
-    });
+        
+        // Fermer le menu au clic sur un lien
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                menuToggle.setAttribute('aria-expanded', 'false');
+                mainNav.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+    }
     
     // Header scroll effect
     let lastScroll = 0;
@@ -79,7 +112,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // ===========================================
-    // 2. ANIMATIONS HERO SECTION
+    // 3. ANIMATIONS HERO SECTION
     // ===========================================
     
     // Typing effect
@@ -131,57 +164,99 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(typeEffect, 1000);
     }
     
-    // Animated counters
-    function animateCounter(element, target, duration = 2000) {
-        let start = 0;
-        const increment = target / (duration / 16);
-        const timer = setInterval(() => {
-            start += increment;
-            if (start >= target) {
-                element.textContent = target + (element.dataset.suffix || '');
-                clearInterval(timer);
-            } else {
-                element.textContent = Math.floor(start);
-            }
-        }, 16);
-    }
-    
     // Animate stats when in viewport
     const observerOptions = {
         threshold: 0.5,
         rootMargin: '0px 0px -100px 0px'
     };
     
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
+    const statsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(async (entry) => {
             if (entry.isIntersecting) {
                 const counters = entry.target.querySelectorAll('[data-count]');
+                const promises = [];
+                
                 counters.forEach(counter => {
                     const target = parseInt(counter.dataset.count);
-                    animateCounter(counter, target);
+                    promises.push(animateCounter(counter, target));
                 });
-                observer.unobserve(entry.target);
+                
+                await Promise.all(promises);
+                statsObserver.unobserve(entry.target);
             }
         });
     }, observerOptions);
     
+    observers.push(statsObserver);
+    
     // Observe hero stats
     const heroStats = document.querySelector('.hero-stats');
     if (heroStats) {
-        observer.observe(heroStats);
+        statsObserver.observe(heroStats);
     }
     
     // ===========================================
-    // 3. GESTION DES ONGLETS FORMATIONS
+    // 4. GESTION DES ONGLETS
     // ===========================================
-    const formationTabs = document.querySelectorAll('#formations .category-tab');
-    const formationGrids = document.querySelectorAll('#formations .formations-grid');
+    
+    function initTabs(containerSelector, cardSelector) {
+        const container = document.querySelector(containerSelector);
+        if (!container) return;
+        
+        const tabs = container.querySelectorAll('.category-tab');
+        const grids = container.querySelectorAll('.cards-grid');
+        
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Retirer active de tous
+                tabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                
+                const category = tab.dataset.category;
+                
+                // Gérer l'affichage
+                grids.forEach(grid => {
+                    const isActive = grid.id === category;
+                    grid.classList.toggle('active', isActive);
+                    grid.style.display = isActive ? 'flex' : 'none';
+                });
+                
+                // Réinitialiser le scroll
+                const scrollWrapper = container.querySelector('.scroll-wrapper');
+                if (scrollWrapper) {
+                    scrollWrapper.scrollLeft = 0;
+                }
+                
+                // Animer les cartes
+                setTimeout(() => {
+                    const activeGrid = document.querySelector(`${containerSelector} .cards-grid.active`);
+                    if (activeGrid) {
+                        const cards = activeGrid.querySelectorAll(cardSelector);
+                        cards.forEach((card, index) => {
+                            card.style.opacity = '0';
+                            card.style.transform = 'translateY(30px)';
+                            setTimeout(() => {
+                                card.style.opacity = '1';
+                                card.style.transform = 'translateY(0)';
+                            }, index * 100);
+                        });
+                    }
+                }, 10);
+            });
+        });
+        
+        // Initialiser les grids de formations
+        if (containerSelector === '#formations') {
+            initializeFormationGrids();
+        }
+    }
     
     // Initialiser les grids par catégorie
     function initializeFormationGrids() {
         const allFormations = document.querySelectorAll('#toutes .formation-card');
         
         // Pour chaque catégorie, filtrer les formations
+        const formationGrids = document.querySelectorAll('#formations .formations-grid');
         formationGrids.forEach(grid => {
             if (grid.id !== 'toutes') {
                 grid.innerHTML = '';
@@ -197,163 +272,67 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Gérer le clic sur les onglets de formations
-    formationTabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-            // Retirer la classe active de tous les onglets
-            formationTabs.forEach(t => t.classList.remove('active'));
-            // Ajouter la classe active à l'onglet cliqué
-            tab.classList.add('active');
-            
-            const category = tab.dataset.category;
-            
-            // Cacher toutes les grids d'abord
-            formationGrids.forEach(grid => {
-                grid.classList.remove('active');
-                grid.style.display = 'none';
-            });
-            
-            // Afficher la grid correspondante
-            const targetGrid = document.querySelector(`#formations #${category}`);
-            if (targetGrid) {
-                targetGrid.classList.add('active');
-                targetGrid.style.display = 'flex';
-                
-                // Animer les cartes
-                setTimeout(() => {
-                    const cards = targetGrid.querySelectorAll('.formation-card');
-                    cards.forEach((card, index) => {
-                        card.style.opacity = '0';
-                        card.style.transform = 'translateY(30px)';
-                        setTimeout(() => {
-                            card.style.opacity = '1';
-                            card.style.transform = 'translateY(0)';
-                        }, index * 100);
-                    });
-                }, 10);
-            }
-            
-            // Réinitialiser la position de défilement
-            const scrollWrapper = document.querySelector('#formations .scroll-wrapper');
-            if (scrollWrapper) {
-                scrollWrapper.scrollLeft = 0;
-            }
-        });
-    });
-    
-    // Initialiser les grids de formations
-    initializeFormationGrids();
-    
-    // ===========================================
-    // 4. GESTION DES ONGLETS BOUTIQUE
-    // ===========================================
-    const boutiqueTabs = document.querySelectorAll('#boutique .category-tab');
-    const boutiqueGrids = document.querySelectorAll('#boutique .boutique-grid');
-    
-    boutiqueTabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-            // Retirer la classe active de tous les onglets
-            boutiqueTabs.forEach(t => t.classList.remove('active'));
-            // Ajouter la classe active à l'onglet cliqué
-            tab.classList.add('active');
-            
-            const category = tab.dataset.category;
-            
-            // Cacher toutes les grids d'abord
-            boutiqueGrids.forEach(grid => {
-                grid.classList.remove('active');
-                grid.style.display = 'none';
-            });
-            
-            // Afficher la grid correspondante
-            const targetGrid = document.querySelector(`#boutique #${category}`);
-            if (targetGrid) {
-                targetGrid.classList.add('active');
-                targetGrid.style.display = 'flex';
-                
-                // Animer les cartes
-                setTimeout(() => {
-                    const cards = targetGrid.querySelectorAll('.product-card');
-                    cards.forEach((card, index) => {
-                        card.style.opacity = '0';
-                        card.style.transform = 'translateY(30px)';
-                        setTimeout(() => {
-                            card.style.opacity = '1';
-                            card.style.transform = 'translateY(0)';
-                        }, index * 100);
-                    });
-                }, 10);
-            }
-            
-            // Réinitialiser la position de défilement
-            const scrollWrapper = document.querySelector('#boutique .scroll-wrapper');
-            if (scrollWrapper) {
-                scrollWrapper.scrollLeft = 0;
-            }
-        });
-    });
+    // Initialiser les onglets
+    initTabs('#formations', '.formation-card');
+    initTabs('#boutique', '.product-card');
     
     // ===========================================
     // 5. DÉFILEMENT HORIZONTAL AVEC 3 CARTES VISIBLES
     // ===========================================
-    const horizontalContainers = document.querySelectorAll('.horizontal-scroll-container');
     
-    horizontalContainers.forEach(container => {
-        const scrollWrapper = container.querySelector('.scroll-wrapper');
-        const scrollNavPrev = container.querySelector('.scroll-nav.prev');
-        const scrollNavNext = container.querySelector('.scroll-nav.next');
+    function initHorizontalScroll(containerSelector) {
+        const containers = document.querySelectorAll(containerSelector);
         
-        if (scrollNavPrev && scrollNavNext) {
-            // Déterminer la largeur de défilement en fonction de la section
-            let scrollAmount = 300; // valeur par défaut
+        containers.forEach(container => {
+            const scrollWrapper = container.querySelector('.scroll-wrapper');
+            const prevBtn = container.querySelector('.scroll-nav.prev');
+            const nextBtn = container.querySelector('.scroll-nav.next');
             
-            if (container.closest('#formations')) {
-                scrollAmount = 320 + 16; // card width + gap
-            } else if (container.closest('#boutique')) {
-                scrollAmount = 280 + 16; // card width + gap
-            } else if (container.closest('#services')) {
-                scrollAmount = 300 + 16;
-            } else if (container.closest('#equipe')) {
-                scrollAmount = 280 + 16;
-            }
+            if (!scrollWrapper || !prevBtn || !nextBtn) return;
             
-            scrollNavPrev.addEventListener('click', () => {
+            // Calcul dynamique de la largeur à défiler
+            const getScrollAmount = () => {
+                const firstCard = scrollWrapper.querySelector('.formation-card, .service-card, .product-card, .team-card');
+                if (!firstCard) return 300;
+                
+                const cardWidth = firstCard.offsetWidth;
+                const cardMargin = 16; // var(--spacing-md)
+                return cardWidth + cardMargin;
+            };
+            
+            prevBtn.addEventListener('click', () => {
                 scrollWrapper.scrollBy({
-                    left: -scrollAmount,
+                    left: -getScrollAmount(),
                     behavior: 'smooth'
                 });
             });
             
-            scrollNavNext.addEventListener('click', () => {
+            nextBtn.addEventListener('click', () => {
                 scrollWrapper.scrollBy({
-                    left: scrollAmount,
+                    left: getScrollAmount(),
                     behavior: 'smooth'
                 });
             });
-        }
-        
-        // Hide/show navigation buttons based on scroll position
-        if (scrollWrapper) {
-            scrollWrapper.addEventListener('scroll', () => {
+            
+            // Gérer la visibilité des boutons
+            const updateNavButtons = () => {
                 const maxScroll = scrollWrapper.scrollWidth - scrollWrapper.clientWidth;
                 
-                if (scrollNavPrev) {
-                    scrollNavPrev.style.opacity = scrollWrapper.scrollLeft > 0 ? '1' : '0.5';
-                    scrollNavPrev.style.pointerEvents = scrollWrapper.scrollLeft > 0 ? 'auto' : 'none';
-                }
+                prevBtn.style.opacity = scrollWrapper.scrollLeft > 0 ? '1' : '0.3';
+                prevBtn.style.pointerEvents = scrollWrapper.scrollLeft > 0 ? 'auto' : 'none';
                 
-                if (scrollNavNext) {
-                    scrollNavNext.style.opacity = scrollWrapper.scrollLeft < maxScroll ? '1' : '0.5';
-                    scrollNavNext.style.pointerEvents = scrollWrapper.scrollLeft < maxScroll ? 'auto' : 'none';
-                }
-            });
+                nextBtn.style.opacity = scrollWrapper.scrollLeft < maxScroll - 1 ? '1' : '0.3';
+                nextBtn.style.pointerEvents = scrollWrapper.scrollLeft < maxScroll - 1 ? 'auto' : 'none';
+            };
             
-            // Trigger initial state
-            setTimeout(() => {
-                scrollWrapper.dispatchEvent(new Event('scroll'));
-            }, 100);
-        }
-    });
+            scrollWrapper.addEventListener('scroll', updateNavButtons);
+            window.addEventListener('resize', updateNavButtons);
+            updateNavButtons(); // Initial
+        });
+    }
+    
+    // Initialiser le scroll horizontal
+    initHorizontalScroll('.horizontal-scroll-container');
     
     // ===========================================
     // 6. FORMULAIRE DE CONTACT
@@ -361,7 +340,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const contactForm = document.getElementById('contactForm');
     
     if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
+        contactForm.addEventListener('submit', async function(e) {
             e.preventDefault();
             
             // Basic validation
@@ -373,24 +352,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (!field.value.trim()) {
                     isValid = false;
                     field.classList.add('error');
-                    field.style.borderColor = 'var(--danger-color)';
-                    field.style.animation = 'shake 0.5s';
-                } else {
-                    field.style.borderColor = '';
-                    field.style.animation = '';
                 }
             });
             
             // Email validation
             const emailField = this.querySelector('input[type="email"]');
-            if (emailField && emailField.value) {
-                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                if (!emailRegex.test(emailField.value)) {
-                    isValid = false;
-                    emailField.classList.add('error');
-                    emailField.style.borderColor = 'var(--danger-color)';
-                    emailField.style.animation = 'shake 0.5s';
-                }
+            if (emailField && emailField.value && !isValidEmail(emailField.value)) {
+                isValid = false;
+                emailField.classList.add('error');
             }
             
             if (!isValid) {
@@ -405,16 +374,24 @@ document.addEventListener('DOMContentLoaded', function() {
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi en cours...';
             submitBtn.disabled = true;
             
-            // Simulate API call
-            setTimeout(() => {
+            // Simulate API call avec token CSRF
+            try {
+                const csrfToken = document.querySelector('meta[name="csrf-token"]')?.content || '';
+                
+                // Simulation d'envoi (dans un cas réel, utiliser fetch())
+                await new Promise(resolve => setTimeout(resolve, 2000));
+                
                 showNotification('Message envoyé avec succès! Nous vous répondrons dans les plus brefs délais.', 'success');
                 contactForm.reset();
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
                 
                 // Scroll to top of form
                 contactForm.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-            }, 2000);
+            } catch (error) {
+                showNotification('Erreur lors de l\'envoi. Veuillez réessayer.', 'error');
+            } finally {
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            }
         });
         
         // Add shake animation
@@ -436,7 +413,10 @@ document.addEventListener('DOMContentLoaded', function() {
         document.head.appendChild(style);
     }
     
-    // Notification function
+    // ===========================================
+    // 7. SYSTÈME DE NOTIFICATIONS
+    // ===========================================
+    
     function showNotification(message, type = 'success') {
         // Remove existing notifications
         const existingNotification = document.querySelector('.notification');
@@ -447,12 +427,13 @@ document.addEventListener('DOMContentLoaded', function() {
         // Create notification
         const notification = document.createElement('div');
         notification.className = `notification ${type}`;
+        notification.setAttribute('role', 'alert');
         notification.innerHTML = `
             <div class="notification-content">
                 <i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-circle'}"></i>
                 <span>${message}</span>
             </div>
-            <button class="notification-close">
+            <button class="notification-close" aria-label="Fermer la notification">
                 <i class="fas fa-times"></i>
             </button>
         `;
@@ -571,7 +552,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.head.appendChild(notificationStyles);
     
     // ===========================================
-    // 7. NEWSLETTER FORM
+    // 8. NEWSLETTER FORM
     // ===========================================
     const newsletterForm = document.querySelector('.newsletter-form');
     
@@ -605,14 +586,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Email validation
-    function isValidEmail(email) {
-        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return re.test(email);
-    }
-    
     // ===========================================
-    // 8. ANIMATIONS AU SCROLL
+    // 9. ANIMATIONS AU SCROLL
     // ===========================================
     const animateOnScroll = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -625,6 +600,8 @@ document.addEventListener('DOMContentLoaded', function() {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
     });
+    
+    observers.push(animateOnScroll);
     
     // Observe cards for animation
     document.querySelectorAll('.formation-card, .service-card, .product-card, .team-card, .testimonial-card').forEach(card => {
@@ -668,49 +645,15 @@ document.addEventListener('DOMContentLoaded', function() {
             opacity: 1;
             transform: translateY(0);
         }
-        
-        /* Staggered animation for cards in grid */
-        .cards-grid .formation-card:nth-child(1),
-        .cards-grid .service-card:nth-child(1),
-        .cards-grid .product-card:nth-child(1),
-        .cards-grid .team-card:nth-child(1) {
-            transition-delay: 0.1s;
-        }
-        
-        .cards-grid .formation-card:nth-child(2),
-        .cards-grid .service-card:nth-child(2),
-        .cards-grid .product-card:nth-child(2),
-        .cards-grid .team-card:nth-child(2) {
-            transition-delay: 0.2s;
-        }
-        
-        .cards-grid .formation-card:nth-child(3),
-        .cards-grid .service-card:nth-child(3),
-        .cards-grid .product-card:nth-child(3),
-        .cards-grid .team-card:nth-child(3) {
-            transition-delay: 0.3s;
-        }
-        
-        .testimonials-grid .testimonial-card:nth-child(1) {
-            transition-delay: 0.1s;
-        }
-        
-        .testimonials-grid .testimonial-card:nth-child(2) {
-            transition-delay: 0.2s;
-        }
-        
-        .testimonials-grid .testimonial-card:nth-child(3) {
-            transition-delay: 0.3s;
-        }
     `;
     document.head.appendChild(animationStyles);
     
     // ===========================================
-    // 9. MISE À JOUR DU COPYRIGHT
+    // 10. MISE À JOUR DU COPYRIGHT
     // ===========================================
+    const currentYear = new Date().getFullYear();
     const copyrightElements = document.querySelectorAll('.copyright p, #currentYear');
     if (copyrightElements.length > 0) {
-        const currentYear = new Date().getFullYear();
         copyrightElements.forEach(element => {
             if (element.id === 'currentYear') {
                 element.textContent = currentYear;
@@ -721,7 +664,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // ===========================================
-    // 10. EFFET PARALLAX SUR LA SPHÈRE TECH
+    // 11. EFFET PARALLAX SUR LA SPHÈRE TECH
     // ===========================================
     const techSphere = document.querySelector('.tech-sphere');
     
@@ -740,7 +683,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // ===========================================
-    // 11. GESTION DES BOUTONS "RÉSERVER" ET "DÉTAILS"
+    // 12. GESTION DES BOUTONS
     // ===========================================
     document.querySelectorAll('.product-btn, .card-btn, .service-btn, .promo-btn, .section-footer .btn-primary, .section-footer .btn-secondary').forEach(button => {
         button.addEventListener('click', function(e) {
@@ -775,64 +718,26 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // ===========================================
-    // 12. TOOLTIPS POUR LES ICÔNES DE PAIEMENT
+    // 13. SMOOTH SCROLL POUR LES LIENS D'ANCRE
     // ===========================================
-    const paymentIcons = document.querySelectorAll('.payment-icons i');
-    
-    paymentIcons.forEach(icon => {
-        const title = icon.getAttribute('title');
-        if (title) {
-            icon.addEventListener('mouseenter', function(e) {
-                const tooltip = document.createElement('div');
-                tooltip.className = 'tooltip';
-                tooltip.textContent = title;
-                document.body.appendChild(tooltip);
-                
-                const rect = this.getBoundingClientRect();
-                tooltip.style.left = rect.left + rect.width / 2 - tooltip.offsetWidth / 2 + 'px';
-                tooltip.style.top = rect.top - tooltip.offsetHeight - 10 + 'px';
-            });
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href === '#') return;
             
-            icon.addEventListener('mouseleave', () => {
-                const tooltip = document.querySelector('.tooltip');
-                if (tooltip) {
-                    tooltip.remove();
-                }
-            });
-        }
+            const target = document.querySelector(href);
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
     });
     
-    // Add tooltip styles
-    const tooltipStyles = document.createElement('style');
-    tooltipStyles.textContent = `
-        .tooltip {
-            position: fixed;
-            background: rgba(0, 0, 0, 0.8);
-            color: white;
-            padding: 0.5rem 0.75rem;
-            border-radius: 4px;
-            font-size: 0.75rem;
-            z-index: 10000;
-            pointer-events: none;
-            white-space: nowrap;
-            font-family: var(--font-primary);
-        }
-        
-        .tooltip::after {
-            content: '';
-            position: absolute;
-            top: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            border-width: 5px;
-            border-style: solid;
-            border-color: rgba(0, 0, 0, 0.8) transparent transparent transparent;
-        }
-    `;
-    document.head.appendChild(tooltipStyles);
-    
     // ===========================================
-    // 13. PRÉCHARGEMENT ET ANIMATIONS INITIALES
+    // 14. INITIALISATION FINALE
     // ===========================================
     window.addEventListener('load', () => {
         document.body.classList.add('loaded');
@@ -846,24 +751,12 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }, 300);
         
-        // Trigger initial card animations
+        // Trigger initial animations
         setTimeout(() => {
-            // Animate first 3 cards in each active section
+            // Animate first visible cards
             const activeGrids = document.querySelectorAll('.formations-grid.active, .boutique-grid.active');
             activeGrids.forEach(grid => {
                 const cards = grid.querySelectorAll('.formation-card, .product-card');
-                cards.forEach((card, index) => {
-                    if (index < 3) {
-                        setTimeout(() => {
-                            card.classList.add('animate-in');
-                        }, index * 200);
-                    }
-                });
-            });
-            
-            // Animate services and team
-            ['services', 'team'].forEach(section => {
-                const cards = document.querySelectorAll(`#${section} .cards-grid > *`);
                 cards.forEach((card, index) => {
                     if (index < 3) {
                         setTimeout(() => {
@@ -879,13 +772,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 setTimeout(() => {
                     card.classList.add('animate-in');
                 }, index * 200);
-            });
-            
-            // Animate section headers
-            document.querySelectorAll('.section-header').forEach((header, index) => {
-                setTimeout(() => {
-                    header.classList.add('animate-in');
-                }, index * 300);
             });
         }, 500);
     });
@@ -917,7 +803,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.head.appendChild(loadingStyles);
     
     // ===========================================
-    // 14. RESPONSIVE ADJUSTMENTS
+    // 15. RESPONSIVE ADJUSTMENTS
     // ===========================================
     function handleResize() {
         const horizontalContainers = document.querySelectorAll('.horizontal-scroll-container');
@@ -967,40 +853,19 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('resize', handleResize);
     
     // ===========================================
-    // 15. AMÉLIORATIONS UX SUPPLEMENTAIRES
+    // 16. NETTOYAGE
     // ===========================================
+    function cleanup() {
+        observers.forEach(observer => observer.disconnect());
+        observers = [];
+    }
     
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            const href = this.getAttribute('href');
-            if (href === '#') return;
-            
-            const target = document.querySelector(href);
-            if (target) {
-                e.preventDefault();
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
+    // Nettoyer les observateurs si la page est déchargée
+    window.addEventListener('beforeunload', cleanup);
     
-    // Add hover effect to phone numbers
-    document.querySelectorAll('.phone-numbers a, .footer-contact a').forEach(link => {
-        link.addEventListener('mouseenter', function() {
-            this.style.color = 'var(--primary-light)';
-            this.style.transform = 'translateX(5px)';
-        });
-        
-        link.addEventListener('mouseleave', function() {
-            this.style.color = '';
-            this.style.transform = '';
-        });
-    });
-    
-    // Initialize all animations on page load
+    // ===========================================
+    // 17. INITIALISATION FINALE
+    // ===========================================
     setTimeout(() => {
         // Trigger scroll to activate intersection observers
         window.dispatchEvent(new Event('scroll'));
