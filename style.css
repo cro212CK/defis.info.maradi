@@ -211,7 +211,6 @@ a:hover {
 /* Cartes */
 .card-base {
     background: rgba(26, 29, 46, 0.8);
-    backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: var(--border-radius-md);
     padding: var(--spacing-md);
@@ -2118,7 +2117,8 @@ address strong {
     h3 { font-size: 1.75rem; }
     
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
+        line-height: 1.2;
     }
     
     .hero-subtitle {
@@ -2189,6 +2189,15 @@ address strong {
     .team-card {
         width: 280px;
     }
+    
+    /* Optimisations performances mobile */
+    .card-base,
+    .info-card,
+    .contact-form,
+    .experience-card {
+        backdrop-filter: none;
+        background: rgba(26, 29, 46, 0.95);
+    }
 }
 
 @media (max-width: 576px) {
@@ -2205,13 +2214,13 @@ address strong {
     }
     
     .tech-sphere {
-        width: 250px;
-        height: 250px;
+        width: 220px;
+        height: 220px;
     }
     
     .sphere-core {
-        width: 60px;
-        height: 60px;
+        width: 50px;
+        height: 50px;
     }
     
     .ring-1 { width: 150px; height: 150px; }
@@ -2219,9 +2228,9 @@ address strong {
     .ring-3 { width: 90px; height: 90px; }
     
     .logo-orb {
-        width: 35px;
-        height: 35px;
-        font-size: 1rem;
+        width: 30px;
+        height: 30px;
+        font-size: 0.875rem;
     }
     
     .section-title {
@@ -2288,6 +2297,10 @@ address strong {
         max-width: calc(3 * 280px + 2 * var(--spacing-md));
         margin: 0 auto;
     }
+    
+    #boutique .cards-grid {
+        justify-content: center;
+    }
 }
 
 /* Uniformisation des onglets */
@@ -2346,10 +2359,4 @@ address strong {
     gap: var(--spacing-md);
     padding: var(--spacing-sm) 0;
     justify-content: flex-start;
-}
-
-@media (min-width: 769px) {
-    #boutique .cards-grid {
-        justify-content: center;
-    }
 }
